@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('profesor_propuesta', function (Blueprint $table) {
             
-            //$table->foreign('propuesta_id')->references('id')->on('propuestas');
-            //$table->foreign('profesor_rut')->references('rut')->on('profesores');
+            
             $table->integer('propuesta_id');     
             $table->string('profesor_rut',10);
             
-
             $table->foreign('propuesta_id')->references('id')->on('propuestas');
-
             $table->foreign('profesor_rut')->references('rut')->on('profesores');
-            
 
             $table->primary(['propuesta_id', 'profesor_rut']);
 
