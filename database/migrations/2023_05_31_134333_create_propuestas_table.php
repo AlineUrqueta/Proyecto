@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('propuestas', function (Blueprint $table) {
-            $table->unsignedInteger('id')->autoIncrement();
+            $table->integer('id')->autoIncrement();
             $table->date('fecha');
             $table->string('documento',100);
             $table->tinyInteger('estado');
