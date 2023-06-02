@@ -1,0 +1,15 @@
+.body{
+        background: linear-gradient(to bottom, #72dde2,#1c6bb0);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+.card-header{
+    background-color: #5e9ace;
+    color: white;
+}
+
+.btn{
+    background-color: #5e9ace;
+    color: white;
+}
