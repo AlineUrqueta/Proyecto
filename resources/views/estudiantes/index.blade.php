@@ -10,14 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 </head>
-<body background="images/fondo.jpg" style="background-size:auto; background-position:top;">>
+<body background="images/fondo.jpg" style="background-size:auto; background-position:top; background-repeat: no-repeat;
+  background-size: cover;">>
     <div class="container bg-ternary">
         <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded">
             <nav class="navbar navbar-expand-lg" id="navbarPrincipal">
                 <div class="container-fluid">
                     
                     <div class="col-11">
-                        Bienvenido <span class="fw-bold">Nombre,Apellido del Estudiante</span>
+                        Bienvenido <span class="fw-bold">Nombre Apellido del Estudiante</span>
                     </div>
                     
                     <div class="col-1 text-end d-none d-lg-block">
@@ -28,7 +29,8 @@
                 </div>
             </nav>
         </div>
-        <div class="container-fluid bg-body-tertiary  border border-5 rounded">
+
+        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -49,14 +51,34 @@
 
             <div class="row m-2 mt-2">
                 <div class="col-4">
-                    <h5 class = "mt-2">Datos del Estudiante</h5>
+                    <h5 class = "mt-2 mb-4">Datos del Estudiante</h5>
                     <div class="card">
-                        
+                        <div class="card-header">
+                            Información Personal
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-4 d-flex flex-column">
+                                    <label for="nombre" class="fw-bold">Nombre </label>
+                                    <label for="apellido" class="fw-bold">Apellido</label>
+                                    <label for="rut" class="fw-bold">RUT</label>
+                                    <label for="email" class="fw-bold">Email</label>
+                                </div>
+                                
 
+                                <div class="col-8 d-flex flex-column">
+                                    <label for="nombre">Juanito </label>
+                                    <label for="apellido">Perez</label>
+                                    <label for="rut">20.358.265-K</label>
+                                    <label for="email">juanitoP@gmail.com</label>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-8">
-                    <h5 class = "mt-2">Propuesta de {Nombre Estudiante}</h5>
+                    <h5 class = "mt-2 mb-4">Propuestas de {Nombre Estudiante}</h5>
 
                     <table class="table table-striped">
                         <thead>
@@ -88,8 +110,8 @@
             </div>
         </div>
 
-        <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded">
-            <nav class="navbar">
+        <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded" style = "height:30rem;">
+            <nav class="navbar mt-2">
                 <form class="container-fluid justify-content-start ">
                     <div class="row ">
                         <div class="col-3"><button class="btn btn-outline-secondary p-2 " type="button">Datos Estudiante</button></div>
@@ -103,14 +125,44 @@
 
             <div class="row m-2 mt-2">
                 <div class="col-4">
-                    <h5 class = "mt-2">Datos del Estudiante</h5>
+                    <h5 class = "mt-2 mb-4">Datos del Estudiante</h5>
                     <div class="card">
-
-
+                        <div class="card-header text-center">
+                            Información Personal
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="m-2  d-flex flex-column">
+                                        <label for="nombre" class="font-monospace">Nombre </label>
+                                        <label for="nombre">Juanito </label>
+                                    </div>
+                                    <div class="m-2  d-flex flex-column">
+                                        <label for="apellido" class="font-monospace">Apellido</label>
+                                        <label for="apellido">Perez</label>
+                                    </div>
+                                    <div class="m-2  d-flex flex-column">
+                                        <label for="rut" class="font-monospace">RUT</label>
+                                        <label for="rut">20.358.265-K</label>
+                                    </div>
+                                    <div class="m-2  d-flex flex-column">
+                                        <label for="email" class="font-monospace" >Email</label>
+                                        <label for="email">juanitoP@gmail.com</label>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                
+  
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-8">
-                    <h5 class = "mt-2">Propuesta de {Nombre Estudiante}</h5>
+                    <h5 class = "mt-2 mb-4">Propuestas de {Nombre Estudiante}</h5>
                     <table class="table table-striped">
                         <thead>
                             <tr>
