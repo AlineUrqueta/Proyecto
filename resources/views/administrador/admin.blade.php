@@ -1,155 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    @extends('layouts.master')
+
+@extends('layouts.estilos')
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="/css/app.css">
-    <title>Administrador</title> 
+    <title>Administrador</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
 
-@section('contenido-principal')
-<body>
-    <div class="container-fluid">
-        
-        <div class="row mt-4">
-            <!-- tabla -->
-            <div class="col-12 col-lg-8 order-last order-lg-last">
-                <table class="table table-bordered table-striped table-hover" style="background-color: aliceblue">
-                    <thead>
-                        <tr>
-                            <th>N°</th>
-                            <th>Rut</th>
-                            <th>Apellidos</th>
-                            <th>Nombre</th>
-                          
-                            <th>Ver y Agregar Proyectos</th>
-                            
-                            
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>20827854-1</td>
-                            <td>Pérez Vargas</td>
-                            <td>Francisco</td>
-
-
-                            <td class="text-center align-middle">
-                                <div class="d-flex justify-content-center">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">visibility</span>
-                                    <h2 class="mx-2">/</h2>
-                                    <span class="material-symbols-outlined">upload_file</span>
-                                  </button>
-                                </div>
-                              </td>
-                               
-                               
-                            
-                          
-
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>234344334-2</td>
-                            <td>akdkdsa kaskda</td>
-                            <td>Epico</td>
-                           
-                               
-                               
-                            <td class="text-center align-middle">
-                                <div class="d-flex justify-content-center">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">visibility</span>
-                                    <h2 class="mx-2">/</h2>
-                                    <span class="material-symbols-outlined">upload_file</span>
-                                  </button>
-                                </div>
-                              </td>
-                                
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>234344334-2</td>
-                            <td>akdkdsa kaskda</td>
-                            <td>Epico</td>
-                           
-                               
-                            <td class="text-center align-middle">
-                                <div class="d-flex justify-content-center">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">visibility</span>
-                                    <h2 class="mx-2">/</h2>
-                                    <span class="material-symbols-outlined">upload_file</span>
-                                  </button>
-                                </div>
-                              </td>
-                                
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>234344334-2</td>
-                            <td>akdkdsa kaskda</td>
-                            <td>Epico</td>
-                            
-                               
-                               
-                            <td class="text-center align-middle">
-                                <div class="d-flex justify-content-center">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">visibility</span>
-                                    <h2 class="mx-2">/</h2>
-                                    <span class="material-symbols-outlined">upload_file</span>
-                                  </button>
-                                </div>
-                              </td>
-                                
-                        </tr>
-                    </thead>
+@section('estilo-aqui')
+<body background="images/fondo.jpg" style="background-size:auto; background-position:top; background-repeat: no-repeat;
+  background-size: cover;">>
+    <div class="container bg-ternary">
+        <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded">
+            <nav class="navbar navbar-expand-lg" id="navbarPrincipal">
+                <div class="container-fluid">
                     
-                </table>
-            </div>
-            <!-- form de proyecto -->
-            <div class="col-12 col-lg-4 order-first order-lg-first mt-3">
-                <div class="card" style="background-color: aliceblue">
-                    <div class="card-header ">Ingresar</div>
-                    <div class="card-body">
-                    
-                            @csrf
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="apellido" class="form-label">Apellidos</label>
-                                <input type="text" id="apellido" name="apellido" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="rut" class="form-label">Rut</label>
-                                <input type="text" id="rut" name="rut" class="form-control">
-                            </div>
-                            
-                           
-                            <div class="mb-3 d-grid gap-2 d-lg-block text-center d-flex justify-content-center">
-                                <button type ="reset" class="btn btn-warning">Cancelar</button>
-                                <button type ="submit" class="btn btn-success">Agregar Alumno</button>
-                            </div>
-                        </form>
+                    <div class="col-11">
+                        Bienvenido <span class="fw-bold">Nombre Apellido del Administrador</span>
                     </div>
+                    
+                    <div class="col-1 text-end d-none d-lg-block">
+                        <a href="/" class="text-dark">Cerrar Sesión</a>
+                        
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
+            <div class="row m-2 ">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Listado de propuestas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ver profesores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ver alumnos</a>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <div class="row m-2 mt-2">
+                <div class="col-12">
+                    <h5 class = "mt-2 mb-4">Propuestas</h5>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Fecha</th>
+                                <th>Documento</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kirby</td>
+                                <td>02-06-2023</td>
+                                <td>archivo.pdf</td>
+                                <td>
+                                    <select class="form-select" name="estado" id="estado">
+                                        <option value="1">Aceptado</option>
+                                        <option value="2">Rechazado</option>
+                                        <option value="3">Esperando revisión</option>
+                                        <option value="4">Modificar propuesta</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tutankamon</td>
+                                <td>02-06-2023</td>
+                                <td>archivo.pdf</td>
+                                <td>
+                                    <select class="form-select" name="estado" id="estado">
+                                        <option value="1">Aceptado</option>
+                                        <option value="2">Rechazado</option>
+                                        <option value="3">Esperando revisión</option>
+                                        <option value="4">Modificar propuesta</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>El Épico</td>
+                                <td>02-06-2023</td>
+                                <td>archivo.pdf</td>
+                                <td>
+                                    <select class="form-select" name="estado" id="estado">
+                                        <option value="1">Aceptado</option>
+                                        <option value="2">Rechazado</option>
+                                        <option value="3">Esperando revisión</option>
+                                        <option value="4">Modificar propuesta</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-
         </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    @endsection
 </body>
+@endsection
 
 </html>
