@@ -18,9 +18,6 @@ use App\Http\Controllers\EstudianteController;
 
 Route::get('/',[HomeController::class,'index'])->name('home.inicio');
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/estudiantes',[EstudianteController::class,'index'])->name('estudiantes.index');
 Route::get('/estudiantes/add',[EstudianteController::class,'add'])->name('estudiantes.addPropuesta');
