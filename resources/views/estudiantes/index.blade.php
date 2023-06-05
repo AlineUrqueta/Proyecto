@@ -19,10 +19,14 @@
                         
 
                         <div class="col-8 d-flex flex-column">
-                            <label for="nombre">Juanito </label>
-                            <label for="apellido">Perez</label>
-                            <label for="rut">20.358.265-K</label>
-                            <label for="email">juanitoP@gmail.com</label>
+                            <label for="nombre">nombre</label>
+                            <label for="apellido">apellido</label>
+                            <label for="rut">rut</label>
+                            <label for="email">email</label>
+                            {{-- <label for="nombre">{{estudiante->nombre}}</label>
+                            <label for="apellido">{{estudiante->apellido}}</label>
+                            <label for="rut">{{estudiante->rut}}</label>
+                            <label for="email">{{estudiante->email}}</label> --}}
                         </div>
                     </div>
                 </div>
@@ -30,7 +34,7 @@
             </div>
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
-            <h5 class = "mt-2 mb-4">Propuestas de {Nombre Estudiante}</h5>
+            <h5 class = "mt-2 mb-4">Propuestas de </h5>
 
             <table class="table table-striped">
                 <thead>

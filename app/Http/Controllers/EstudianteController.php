@@ -7,14 +7,13 @@ use App\Models\Estudiante;
 
 class EstudianteController extends Controller
 {
-    public function show(Estudiante $estudiante){
-        return view('estudiantes.show',compact('estudiante'));
-    }
+    
 
     public function index(){
         $estudiantes = Estudiante::all();
         return view('estudiantes.index',compact('estudiantes'));
     }
+
 
     public function add(){
         $estudiantes = Estudiante::all();
@@ -29,5 +28,9 @@ class EstudianteController extends Controller
     public function retroalimentacion(){
         $estudiantes = Estudiante::all();
         return view('estudiantes.retroalimentacion',compact('estudiantes'));
+    }
+    
+    public function show(Estudiante $estudiante){
+        return view('estudiantes.show',compact('estudiante'));
     }
 }
