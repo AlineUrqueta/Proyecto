@@ -11,11 +11,23 @@ class Profesor_Propuesta extends Model
 
     protected $table = 'profesores_propuestas';
 
-    public function propuestas(){
+    protected $fillable = [
+        'comentario',
+    ];
+
+    public function propuestas()
+    {
         return $this->belongsTo('App\Models\Propuesta');
     }
 
-    public function profesores(){
+    public function profesores()
+    {
         return $this->belongsTo('App\Models\Profesor');
     }
 }
+
+
+
+
+
+

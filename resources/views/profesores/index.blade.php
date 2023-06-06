@@ -1,4 +1,4 @@
-@extends('layouts.masterFinal')
+@extends('layouts.masterProfesor')
 @section('contenido-principal')
 <div class="row m-2">           
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -12,10 +12,11 @@
                     <tr>
                         <th>RUT</th>
                         <th>Fecha</th>
-                        <th>Estado</th>
+                        
                         <th>Comentario</th>
                         <th>Documento</th>
-                        <th>Estado Revisión</th>
+                        <th>Estado</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -23,7 +24,7 @@
                         <td>20827854-1</td>
                         <td>06/07/2023</td>
                         
-                        <td>Aceptado</td>
+                      
                           <td class="text" style="0px">
                                 <div class="d-flex">
                                   <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
@@ -43,13 +44,14 @@
                                 
                                
                               </button></td>
-                              <td>No visto</td>
+                              <td>Aceptado</td>
+                              
                     </tr>
                     <tr>
                         <td>20234254-1</td>
                         <td>06/07/2023</td>
                        
-                        <td>Aceptado</td>
+                        
                           <td class="text" style="0px">
                                 <div class="d-flex ">
                                   <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
@@ -71,14 +73,15 @@
                                 
                                
                               </button></td>
-                              <td>visto</td>
+                              <td>Aceptado</td>
+                            
                     </tr>
 
                     <tr>
                         <td>20827232-1</td>
                         <td>06/07/2023</td>
                      
-                        <td>Aceptado</td>
+                      
                           <td class="text " style="0px">
                                 <div class="d-flex">
                                   <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
@@ -101,7 +104,8 @@
                                  
                                 </button>
                             </td>
-                            <td>No visto</td>
+                            <td>Aceptado</td>
+                            
                     </tr>
                     
                     

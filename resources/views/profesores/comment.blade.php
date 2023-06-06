@@ -1,6 +1,5 @@
-@extends('layouts.masterFinal')
-@section('estilo-aqui')
-@extends('layouts.estilos')
+@extends('layouts.masterProfesor')
+
 @section('contenido-principal')
 
 <div class="row m-2">           
@@ -38,10 +37,12 @@
             </div>
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
+            <form action="{{ route('profesores.guardarComentario') }}" method="POST">
+                @csrf
             <h5 class = "mt-2 mb-4">Comentario </h5>
             <textarea class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
              <button class="btn btn-primary mt-3">Enviar comentario</button>
-           
+            </form>
 
 
 
