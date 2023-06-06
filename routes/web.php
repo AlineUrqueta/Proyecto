@@ -18,11 +18,18 @@ use App\Http\Controllers\PropuestaController;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home.inicio');
+
+//Administrador
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
 
 Route::get('/admin/estudiante',[AdminController::class,'showEstudiante'])->name('administrador.estudiante');
 Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
 
+Route::get('/admin/profesor',[AdminController::class,'show'])->name('administrador.profesor');
+Route::post('/admin/profesor',[AdminController::class,'store'])->name('administrador.store');
+
+
+//Estudiante
 Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
 Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
 Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estudiantes.store');
@@ -31,5 +38,4 @@ Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estu
 Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
-Route::get('/admin/profesor',[AdminController::class,'show'])->name('administrador.profesor');
-Route::post('/admin/profesor',[AdminController::class,'store'])->name('administrador.store');
+//Profesor

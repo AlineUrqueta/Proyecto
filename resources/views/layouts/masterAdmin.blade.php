@@ -23,8 +23,8 @@
             <nav class="navbar navbar-expand-lg" id="navbarPrincipal">
                 <div class="container-fluid">
                     
-                    <div class="col-xl-11 col-m-12 fw-bold">
-                        Bienvenido <span class="fw-bold">Nombre Estudiante</span>
+                    <div class="col-xl-11 col-m-12">
+                        Bienvenido <span class="fw-bold">Administrador</span>
                     </div>
                     
                     <div class="col-xl-1 col-m-12 text-end d-lg-block">

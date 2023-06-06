@@ -22,7 +22,7 @@
                 <div class="container-fluid">
                     
                     <div class="col-11">
-                        Bienvenido <span class="fw-bold">Nombre Apellido del Administrador</span>
+                        Bienvenido <span class="fw-bold">Administrador</span>
                     </div>
                     
                     <div class="col-1 text-end d-none d-lg-block">
@@ -34,84 +34,90 @@
             </nav>
         </div>
 
-        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
+        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:auto;">
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.admin') active @endif" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Ver profesores</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.profesor') active @endif" href="{{route('administrador.profesor')}}">Ver profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ver alumnos</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.estudiante') active @endif" href="{{route('administrador.estudiante')}}">Ver Estudiantes</a>
                     </li>
                 </ul>
             </div>
             
 
             <div class="row m-2 mt-2">
-                <div class="col-4">
-                    <div class="card-body">
-                        <form action = "{{route('administrador.store',$profesor->rut)}}" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col-12 d-flex flex-column">
-                                    <div class="m-2">
-                                        <label for="rut" class="fw-bold mb-2">RUT</label>
-                                        <input type="text" name = "rut" id= "rut" class ="form-control" value="{{$profesor->rut}}">
+                
+                <div class="col-lg-4 col-m-6">
+                    <h5 class = "mt-2 mb-4">Añadir Profesor</h5>
+                    <div class="card">
+                        <div class="card-header text-center">
+                            Registro de Profesor
+                        </div>
+                        <div class="card-body">
+                            <form action = "{{route('administrador.store',$profesor->rut)}}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-12 d-flex flex-column">
+                                        <div class="m-2">
+                                            <label for="rut" class="fw-bold mb-2">RUT</label>
+                                            <input type="text" name = "rut" id= "rut" class ="form-control" value="{{$profesor->rut}}">
+                                        </div>
+                                        <div class="m-2">
+                                            <label for="nombre" class="fw-bold mb-2">Nombre</label>
+                                            <input type="text" name = "nombre" id= "nombre" class ="form-control" value="{{$profesor->nombre}}">
+                                        </div>
+                                        <div class="m-2">
+                                            <label for="apellido" class="fw-bold mb-2">Apellido</label>
+                                        <input type="text" name = "apellido" id= "apellido" class ="form-control" value="{{$profesor->apellido}}">
                                     </div>
-                                    <div class="m-2">
-                                         <label for="nombre" class="fw-bold mb-2">Nombre</label>
-                                        <input type="text" name = "nombre" id= "nombre" class ="form-control" value="{{$profesor->nombre}}">
+                                    
                                     </div>
-                                    <div class="m-2">
-                                        <label for="apellido" class="fw-bold mb-2">Apellido</label>
-                                       <input type="text" name = "apellido" id= "apellido" class ="form-control" value="{{$profesor->apellido}}">
-                                   </div>
-                                   
+        
                                 </div>
-    
-                            </div>
-    
-                            <div class="row">
-                                <div class="mt-4 mb-3 d-grid gap-2 d-block">
-                                    <button type = "submit" class="btn btn-primary">Añadir Profesor</button>
+        
+                                <div class="row">
+                                    <div class="mt-4 mb-3 d-grid gap-2 d-block">
+                                        <button type = "submit" class="btn btn-primary">Añadir Profesor</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>                        
+                            </form>                        
+                        </div>
+                        
                     </div>
+                    
                 </div>
-                <div class="col-8">
-                    <h5 class = "mt-2 mb-4">Profesores</h5>
+
+                <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
+                    <h5 class = "mt-2 mb-4">Lista de Profesores</h5>
 
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>RUT</th>
+                                <th>Rut</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($profesores as $profesor)
                             <tr>
-                                <td>8765345-5</td>
-                                <td>King</td>
-                                <td>Dedede</td>
+                                <td>{{$profesor->rut}}</td>
+                                <td>{{$profesor->nombre}}</td>
+                                <td>{{$profesor->apellido}}</td>
+                                
                             </tr>
-                            <tr>
-                                <td>12345890-6</td>
-                                <td>Dr</td>
-                                <td>Eggman</td>
-                            </tr>
-                            <tr>
-                                <td>14654876-6</td>
-                                <td>Edelgard</td>
-                                <td>Hresvelg</td>
-                            </tr>
+                            @endforeach
+                            
                         </tbody>
                     </table>
                 </div>
+            
             </div>
         </div>
 </body>

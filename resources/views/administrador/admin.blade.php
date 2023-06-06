@@ -22,12 +22,11 @@
                 <div class="container-fluid">
                     
                     <div class="col-11">
-                        Bienvenido <span class="fw-bold">Nombre Apellido del Administrador</span>
+                        Bienvenido <span class="fw-bold">Administrador</span>
                     </div>
                     
                     <div class="col-1 text-end d-none d-lg-block">
-                        <a href="/" class="text-dark">Cerrar Sesión</a>
-                        
+                        <a href="{{route('home.inicio')}}" class="text-dark">Cerrar Sesión</a>
                     </div>
 
                 </div>
@@ -42,10 +41,10 @@
                         <a class="nav-link @if(Route::current()->getName()=='administrador.admin') active @endif" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('administrador.profesor')}}">Ver profesores</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.profesor') active @endif" href="{{route('administrador.profesor')}}">Ver profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if(Route::current()->getName()=='administrador.estudiante') active @endif" href="{{route('administrador.estudiante')}}">Ver alumnos</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.estudiante') active @endif" href="{{route('administrador.estudiante')}}">Ver Estudiantes</a>
                     </li>
                 </ul>
             </div>
