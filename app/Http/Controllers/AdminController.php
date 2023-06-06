@@ -8,15 +8,18 @@ use App\Models\Estudiante;
 class AdminController extends Controller
 {
     public function index(){
-        $estudiantes = Estudiante::all();
+        
         return view('administrador.admin');
     }
 
-    public function add(){
-        return view('administrador.estudiante');
+    public function show(){
+        $estudiantes = Estudiante::all();
+        $estudiante = new Estudiante();
+        return view('administrador.estudiante',compact('estudiante','estudiantes'));
     }
 
-    public function store(Request $request){
+
+    public function storeEstudiante(Request $request){
         $estudiante  = new Estudiante();
         $estudiante -> rut = $request->rut;
         $estudiante -> nombre = $request->nombre;

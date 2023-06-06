@@ -20,8 +20,8 @@ use App\Http\Controllers\PropuestaController;
 Route::get('/',[HomeController::class,'index'])->name('home.inicio');
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
 
-Route::get('/admin/estudiante',[AdminController::class,'add'])->name('administrador.estudiante');
-Route::get('/admin/estudiante',[AdminController::class,'store'])->name('administrador.estudiante');
+Route::get('/admin/estudiante',[AdminController::class,'show'])->name('administrador.estudiante');
+Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
 
 Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
 Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
