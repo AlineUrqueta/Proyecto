@@ -7,75 +7,104 @@
         <div class="">
             <h5 class = "mt-2 mb-4">Propuestas de Estudiantes</h5>
 
-            <table class="table ">
+            <table class="table border-dark">
                 <thead>
                     <tr>
                         <th>RUT</th>
-                        <th>Nombre</th>
-                        <th>Documento</th>
+                        <th>Fecha</th>
                         <th>Estado</th>
                         <th>Comentario</th>
+                        <th>Documento</th>
+                        <th>Estado Revisión</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>20827854-1</td>
-                        <td>Francisco</td>
-                        <td>Documento.pdf</td>
+                        <td>06/07/2023</td>
+                        
                         <td>Aceptado</td>
                           <td class="text" style="0px">
                                 <div class="d-flex">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                   
-                                    <span class="material-symbols-outlined">build_circle</span>
+                                  <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
+                                 
                                     
-                                   
-                                  </button>
+                                    Agregar
                                   
-                                  <button class="btn btn-warning d-flex align-items-center">
-                                  <span class="material-symbols-outlined">delete</span>
-                                </button>
+                                   
+
+                                </a>
+                                  
+                                  
                                 </div>
                               </td>
+                              <td> <button class="btn border-dark d-flex align-items-center">
+                                Documeto.pdf   <span class="material-symbols-outlined ">download</span>
+                                
+                               
+                              </button></td>
+                              <td>No visto</td>
                     </tr>
                     <tr>
-                        <td>20827854-1</td>
-                        <td>Francisco</td>
-                        <td>Documento.pdf</td>
+                        <td>20234254-1</td>
+                        <td>06/07/2023</td>
+                       
                         <td>Aceptado</td>
                           <td class="text" style="0px">
                                 <div class="d-flex ">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">build_circle</span>
+                                  <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
+                                 
                                     
-                                   
-                                  </button>
+                                    Cambiar
                                   
-                                  <button class="btn btn-warning d-flex align-items-center">
+                                   
+
+                                </a>
+                                  
+                                  <button class="btn border-dark d-flex align-items-center">
                                   <span class="material-symbols-outlined">delete</span>
                                 </button>
                                 </div>
                               </td>
+                              <td> <button class="btn border-dark d-flex align-items-center">
+                                Documeto.pdf   <span class="material-symbols-outlined ">download</span>
+                                
+                               
+                              </button></td>
+                              <td>visto</td>
                     </tr>
+
                     <tr>
-                        <td>20827854-1</td>
-                        <td>Francisco</td>
-                        <td>Documento.pdf</td>
+                        <td>20827232-1</td>
+                        <td>06/07/2023</td>
+                     
                         <td>Aceptado</td>
                           <td class="text " style="0px">
                                 <div class="d-flex">
-                                  <button class="btn btn-info d-flex align-items-center">
-                                    <span class="material-symbols-outlined">build_circle</span>
+                                  <a href="{{ route('profesores.comment') }}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
+                                 
                                     
-                                   
-                                  </button>
+                                    Agregar
                                   
-                                  <button class="btn btn-warning d-flex align-items-center">
-                                  <span class="material-symbols-outlined">delete</span>
-                                </button>
+                                   
+
+                                </a>
+                                  
+                                 
                                 </div>
                               </td>
+                              <td>
+                                
+                                <button class="btn border-dark d-flex align-items-center">
+                                  Proyecto.pdf   <span class="material-symbols-outlined ">download</span>
+                                  
+                                 
+                                </button>
+                            </td>
+                            <td>No visto</td>
                     </tr>
+                    
+                    
                 </tbody>
             </table>
         </div>

@@ -1,5 +1,8 @@
 @extends('layouts.masterFinal')
+@section('estilo-aqui')
+@extends('layouts.estilos')
 @section('contenido-principal')
+
 <div class="row m-2">           
     <div class="row m-2 mt-2">
         <div class="col-lg-4 col-m-12 ">
@@ -21,14 +24,11 @@
                         
 
                         <div class="col-8 d-flex flex-column">
-                            <label for="nombre">nombre</label>
-                            <label for="apellido">apellido</label>
-                            <label for="rut">rut</label>
-                            <label for="email">email</label>
-                            {{-- <label for="nombre">{{estudiante->nombre}}</label>
-                            <label for="apellido">{{estudiante->apellido}}</label>
-                            <label for="rut">{{estudiante->rut}}</label>
-                            <label for="email">{{estudiante->email}}</label> --}}
+                            <label for="nombre">Basura</label>
+                            <label for="apellido">apestosin</label>
+                            <label for="rut">2222222-2</label>
+                            <label for="email">mehacenbullyng@ayuda.com</label>
+                           
                             
                             <label for="email" >Tesis</label>
                         </div>
@@ -39,7 +39,8 @@
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
             <h5 class = "mt-2 mb-4">Comentario </h5>
-
+            <textarea class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
+             <button class="btn btn-primary mt-3">Enviar comentario</button>
            
 
 
