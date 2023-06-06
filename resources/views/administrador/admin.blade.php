@@ -41,7 +41,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Listado de propuestas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ver profesores</a>
+                        <a class="nav-link" href="{{route('administrador.profesor')}}">Ver profesores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ver alumnos</a>

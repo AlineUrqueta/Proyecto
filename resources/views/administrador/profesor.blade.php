@@ -38,7 +38,7 @@
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Listado de propuestas</a>
+                        <a class="nav-link" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Ver profesores</a>
@@ -51,7 +51,38 @@
             
 
             <div class="row m-2 mt-2">
-                <div class="col-12">
+                <div class="col-4">
+                    <div class="card-body">
+                        <form action = "" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 d-flex flex-column">
+                                    <div class="m-2">
+                                        <label for="rut" class="fw-bold mb-2">RUT</label>
+                                        <input type="text" name = "rut" id= "rut" class ="form-control">
+                                    </div>
+                                    <div class="m-2">
+                                         <label for="nombre" class="fw-bold mb-2">Nombre</label>
+                                        <input type="text" name = "nombre" id= "nombre" class ="form-control">
+                                    </div>
+                                    <div class="m-2">
+                                        <label for="apellido" class="fw-bold mb-2">Apellido</label>
+                                       <input type="text" name = "apellido" id= "apellido" class ="form-control">
+                                   </div>
+                                   
+                                </div>
+    
+                            </div>
+    
+                            <div class="row">
+                                <div class="mt-4 mb-3 d-grid gap-2 d-block">
+                                    <button type = "submit" class="btn btn-primary">Añadir Profesor</button>
+                                </div>
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
+                <div class="col-8">
                     <h5 class = "mt-2 mb-4">Profesores</h5>
 
                     <table class="table table-striped">
