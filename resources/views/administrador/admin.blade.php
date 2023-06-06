@@ -15,8 +15,7 @@
 </head>
 
 @section('estilo-aqui')
-<body background="images/fondo.jpg" style="background-size:auto; background-position:top; background-repeat: no-repeat;
-  background-size: cover;">>
+<body>
     <div class="container bg-ternary">
         <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded">
             <nav class="navbar navbar-expand-lg" id="navbarPrincipal">
