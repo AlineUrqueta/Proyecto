@@ -12,14 +12,14 @@ class AdminController extends Controller
         return view('administrador.admin',compact('profesores'));
     }
 
-    public function show(){
+    public function showProfesor(){
         $profesores = Profesor::all();
         $profesor = new Profesor();
 
         return view('administrador.profesor',compact('profesores','profesor'));
     }
 
-    public function store(Request $request){
+    public function storeProfesor(Request $request){
         $profesor = new Profesor();
         $profesor->rut = $request->rut;
         $profesor->nombre = $request->nombre;

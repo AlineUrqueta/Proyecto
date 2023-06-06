@@ -25,8 +25,8 @@ Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin
 Route::get('/admin/estudiante',[AdminController::class,'showEstudiante'])->name('administrador.estudiante');
 Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
 
-Route::get('/admin/profesor',[AdminController::class,'show'])->name('administrador.profesor');
-Route::post('/admin/profesor',[AdminController::class,'store'])->name('administrador.store');
+Route::get('/admin/profesor',[AdminController::class,'showProfesor'])->name('administrador.profesor');
+Route::post('/admin/profesor',[AdminController::class,'storeProfesor'])->name('administrador.storeProfesor');
 
 
 //Estudiante

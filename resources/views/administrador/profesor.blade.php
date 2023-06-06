@@ -59,7 +59,7 @@
                             Registro de Profesor
                         </div>
                         <div class="card-body">
-                            <form action = "{{route('administrador.store',$profesor->rut)}}" method="POST">
+                            <form action = "{{route('administrador.storeProfesor',$profesor->rut)}}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12 d-flex flex-column">
