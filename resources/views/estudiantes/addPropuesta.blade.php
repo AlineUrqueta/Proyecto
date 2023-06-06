@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     {{-- {{route('propuesta.store')}} --}}
-                    <form action = "" method="POST">
+                    <form action = "{{route('estudiantes.store')}}" method="POST" enctype = "multipart/form-data">
                         @csrf
 
                         <!-- for, id y name deben tener el mismo nombre. -->
@@ -25,7 +25,7 @@
                                     <input type="date"name = "fecha" id= "fecha" class ="form-control">
                                 </div>
                                 <div class="m-2">
-                                     <label for="apellido" class="fw-bold mb-2">Documento</label>
+                                     <label for="documento" class="fw-bold mb-2">Documento</label>
                                     <input type="file" class ="form-control">
                                 </div>
                                 
