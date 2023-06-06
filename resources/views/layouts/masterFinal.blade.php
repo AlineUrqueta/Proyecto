@@ -30,23 +30,7 @@
         </div>
 
         <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:auto;">
-            <div class= "mt-2">
-                <ul class="nav nav-tabs">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="{{route('estudiantes.index')}}">Datos Estudiante</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if(Route::current()->getName()=='estudiantes.addPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.addPropuesta')}}">Añadir Propuesta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if(Route::current()->getName()=='estudiantes.estadoPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.estadoPropuesta')}}">Estado Propuesta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if(Route::current()->getName()=='estudiantes.retroalimentacion') active @endif" aria-current="page" href="{{route('estudiantes.retroalimentacion')}}">Retroalimentacion</a>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- datos -->
             @yield('contenido-principal')
               
