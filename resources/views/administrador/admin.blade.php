@@ -54,29 +54,40 @@
                 <div class="col-12">
                     <h5 class = "mt-2 mb-4">Propuestas</h5>
 
+                    @if(count($propuestas)==0)
+                    <div class="col">
+                        <div class="alert alert-info">
+                            No hay propuestas en la base de datos.
+                        </div>
+                    </div>
+                    @endif
+
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Alumno</th>
+                                <th>RUT Alumno</th>
                                 <th>Fecha</th>
                                 <th>Documento</th>
                                 <th>Estado</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($propuestas as $propuesta)
                             <tr>
-                                <td>Kirby</td>
-                                <td>02-06-2023</td>
-                                <td>archivo.pdf</td>
+                                <td>{{$propuesta->estudiante_rut}}</td>
+                                <td>{{$propuesta->fecha}}</td>
+                                <td>{{$propuesta->documento}}</td>
                                 <td>
                                     <select class="form-select" name="estado" id="estado">
-                                        <option value="1">Aceptado</option>
-                                        <option value="2">Rechazado</option>
-                                        <option value="3">Esperando revisión</option>
-                                        <option value="4">Modificar propuesta</option>
+                                        <option value="aceptado" @if($propuesta->estado=="aceptado") selected="selected"@endif>Aceptado</option>
+                                        <option value="rechazado" @if($propuesta->estado=="rechazado") selected="selected"@endif>Rechazado</option>
+                                        <option value="esperando" @if($propuesta->estado=="esperando") selected="selected"@endif>Esperando revisión</option>
+                                        <option value="modificar" @if($propuesta->estado=="modificar") selected="selected"@endif>Modificar propuesta</option>
                                     </select>
                                 </td>
                             </tr>
+                            @endforeach
+                            <!--
                             <tr>
                                 <td>Tutankamon</td>
                                 <td>02-06-2023</td>
@@ -103,6 +114,7 @@
                                     </select>
                                 </td>
                             </tr>
+                            -->
                         </tbody>
                     </table>
                 </div>
