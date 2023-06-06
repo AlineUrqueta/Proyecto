@@ -1,19 +1,16 @@
 @extends('layouts.masterFinal')
 @section('contenido-principal')
-<div class= "mt-2">
+
+<div class="row m-2 ">
     <ul class="nav nav-tabs">
-        
         <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="{{route('estudiantes.index')}}">Datos Estudiante</a>
+            <a class="nav-link @if(Route::current()->getName()=='administrador.admin') active @endif" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.addPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.addPropuesta')}}">Añadir Propuesta</a>
+            <a class="nav-link" href="#">Ver profesores</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.estadoPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.estadoPropuesta')}}">Estado Propuesta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.retroalimentacion') active @endif" aria-current="page" href="{{route('estudiantes.retroalimentacion')}}">Retroalimentacion</a>
+            <a class="nav-link @if(Route::current()->getName()=='administrador.estudiante') active @endif" href="{{route('administrador.estudiante')}}">Ver alumnos</a>
         </li>
     </ul>
 </div>
@@ -21,14 +18,14 @@
 <div class="row m-2">           
     <div class="row m-2 mt-2">
         <div class="col-lg-6 col-m-6">
-            <h5 class = "mt-2 mb-4">Añadir Nueva Propuesta</h5>
+            <h5 class = "mt-2 mb-4">Añadir Estudiante</h5>
             <div class="card">
                 <div class="card-header text-center">
                     Registro de Propuesta
                 </div>
                 <div class="card-body">
                     {{-- {{route('propuesta.store')}} --}}
-                    <form action = "{{route('estudiantes.store')}}" method="POST" enctype = "multipart/form-data">
+                    <form action = "{{route('administrador.store')}}" method="POST" >
                         @csrf
 
                         <!-- for, id y name deben tener el mismo nombre. -->
@@ -67,7 +64,7 @@
         </div>
         
         <div class="col-lg-6 col-m-12 mt-m-4 mt-s-4">
-            <h5 class = "mt-2 mb-4">Propuestas de {Nombre Estudiante}</h5>
+            <h5 class = "mt-2 mb-4">Lista de estudiants</h5>
 
             <table class="table table-striped">
                 <thead>

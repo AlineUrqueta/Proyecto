@@ -16,7 +16,7 @@
 
 @section('estilo-aqui')
 <body background="images/fondo.jpg" style="background-size:auto; background-position:top; background-repeat: no-repeat;
-  background-size: cover;">>
+  background-size: cover;">
     <div class="container bg-ternary">
         <div class="container-fluid bg-body-tertiary mt-4 mb-4 border border-5 rounded">
             <nav class="navbar navbar-expand-lg" id="navbarPrincipal">
@@ -35,17 +35,18 @@
             </nav>
         </div>
 
+        
         <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Listado de propuestas</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.admin') active @endif" aria-current="page" href="{{route('administrador.admin')}}">Listado de propuestas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ver profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ver alumnos</a>
+                        <a class="nav-link @if(Route::current()->getName()=='administrador.estudiante') active @endif" href="{{route('administrador.estudiante')}}">Ver alumnos</a>
                     </li>
                 </ul>
             </div>

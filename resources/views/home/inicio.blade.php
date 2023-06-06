@@ -22,14 +22,8 @@
                         <h4 class="card-title">Administrador</h4>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" style="margin-top: 20px; border-color: #5e9ace;" name="admin" id="admin">
-                            <option selected>Seleccione administrador</option>
-                            <option value="1">Juan Carlos Bodoque</option>
-                            <option value="2">Pepe Grillo</option>
-                        </select>
                         <div class="d-grid gap-2">
-                        <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
+                            <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
                         </div>
                     </div>
                 </div>
