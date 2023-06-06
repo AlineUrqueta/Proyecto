@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\Models\Profesor;
+use App\Models\Profesor;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,6 +10,13 @@ class AdminController extends Controller
         $profesores = Profesor::all();
         
         return view('administrador.admin',compact('profesores'));
+    }
+
+    public function show(){
+        $profesores = Profesor::all();
+        $profesor = new Profesor();
+
+        return view('administrador.profesor',compact('profesores','profesor'));
     }
 
     public function store(Request $request){

@@ -53,21 +53,21 @@
             <div class="row m-2 mt-2">
                 <div class="col-4">
                     <div class="card-body">
-                        <form action = "" method="POST">
+                        <form action = "{{route('administrador.store',$profesor->rut)}}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-12 d-flex flex-column">
                                     <div class="m-2">
                                         <label for="rut" class="fw-bold mb-2">RUT</label>
-                                        <input type="text" name = "rut" id= "rut" class ="form-control">
+                                        <input type="text" name = "rut" id= "rut" class ="form-control" value="{{$profesor->rut}}">
                                     </div>
                                     <div class="m-2">
                                          <label for="nombre" class="fw-bold mb-2">Nombre</label>
-                                        <input type="text" name = "nombre" id= "nombre" class ="form-control">
+                                        <input type="text" name = "nombre" id= "nombre" class ="form-control" value="{{$profesor->nombre}}">
                                     </div>
                                     <div class="m-2">
                                         <label for="apellido" class="fw-bold mb-2">Apellido</label>
-                                       <input type="text" name = "apellido" id= "apellido" class ="form-control">
+                                       <input type="text" name = "apellido" id= "apellido" class ="form-control" value="{{$profesor->apellido}}">
                                    </div>
                                    
                                 </div>

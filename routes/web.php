@@ -18,9 +18,11 @@ use App\Http\Controllers\EstudianteController;
 
 Route::get('/',[HomeController::class,'index'])->name('home.inicio');
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
-Route::get('/admin/profesor',[AdminController::class,'store'])->name('administrador.profesor');
+
 Route::get('/estudiantes',[EstudianteController::class,'index'])->name('estudiantes.index');
 Route::get('/estudiantes/add',[EstudianteController::class,'add'])->name('estudiantes.addPropuesta');
 Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
+Route::get('/admin/profesor',[AdminController::class,'show'])->name('administrador.profesor');
+Route::post('/admin/profesor',[AdminController::class,'store'])->name('administrador.store');
