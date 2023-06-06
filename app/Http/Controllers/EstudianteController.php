@@ -8,21 +8,20 @@ use App\Models\Estudiante;
 class EstudianteController extends Controller
 {
     
-    public function index( $estudiante_rut){
-        $estudiante = Estudiante::findOrFail($estudiante_rut);
+    public function index(Estudiante $estudiante){
         return view('estudiantes.index',compact('estudiante'));
     }
 
 
-    public function add(){
-        $estudiantes = Estudiante::all();
-        return view('estudiantes.addPropuesta',compact('estudiantes'));
-    }
+    // public function add(){
+    //     $estudiantes = Estudiante::all();
+    //     return view('estudiantes.addPropuesta',compact('estudiantes'));
+    // }
 
-    public function show(){
-        $estudiantes = Estudiante::all();
-        return view('estudiantes.addPropuesta',compact('estudiantes'));
-    }
+    // public function show(){
+    //     $estudiantes = Estudiante::all();
+    //     return view('estudiantes.addPropuesta',compact('estudiantes'));
+    // }
 
     // public function estado(){
     //     $estudiantes = Estudiante::all();
