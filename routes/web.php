@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\PropuestaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,29 @@ use App\Http\Controllers\ProfesorController;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home.inicio');
-Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
 
-Route::get('/estudiantes',[EstudianteController::class,'index'])->name('estudiantes.index');
-Route::get('/estudiantes/add',[EstudianteController::class,'add'])->name('estudiantes.addPropuesta');
+//Administrador
+Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
+Route::get('/admin',[PropuestaController::class,'showPropuesta'])->name('administrador.admin');
+
+Route::get('/admin/estudiante',[AdminController::class,'showEstudiante'])->name('administrador.estudiante');
+Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
+
+Route::get('/admin/profesor',[AdminController::class,'showProfesor'])->name('administrador.profesor');
+Route::post('/admin/profesor',[AdminController::class,'storeProfesor'])->name('administrador.storeProfesor');
+
+
+//Estudiante
+Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
+
+
+//Propuesta
+Route::get('/estudiante/propuesta',[PropuestaController::class,'add'])->name('estudiante.propuesta');
+
+
+Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
+Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estudiantes.store');
+
 Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
@@ -30,3 +50,6 @@ Route::get('/profesores',[ProfesorController::class,'index'])->name('profesores.
 Route::get('/profesores/comment',[ProfesorController::class,'comment'])->name('profesores.comment');
 
 Route::post('/profesores/guardar-comentario', [ProfesorController::class, 'guardarComentario'])->name('profesores.guardarComentario');
+
+
+//Profesor

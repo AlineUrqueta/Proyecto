@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
@@ -19,17 +20,12 @@
             <div class="col-12 col-md-4">
                 <div class="card text-center m-2">
                     <div class="card-header" style="background-color: #5e9ace; color: white;">
-                        <h4 class="card-title">Administrador</h4>
+                        <h4 class="card-title">Administrador </h4>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" style="margin-top: 20px; border-color: #5e9ace;" name="admin" id="admin">
-                            <option selected>Seleccione administrador</option>
-                            <option value="1">Juan Carlos Bodoque</option>
-                            <option value="2">Pepe Grillo</option>
-                        </select>
+                        
                         <div class="d-grid gap-2">
-                        <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
+                            <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
                         </div>
                     </div>
                 </div>
@@ -41,10 +37,10 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" style="margin-top: 20px; border-color: #5e9ace;" name="admin" id="admin">
-                        <option selected>Seleccione profesor</option>
-                        <option value="1">Juan Carlos Bodoque</option>
-                        <option value="2">Pepe Grillo</option>
+                        <select class="form-select" name ="profesor" id = "profesor" style="margin-top: 20px; border-color: #5e9ace;" >
+                            @foreach ($profesores as $profesor)
+                                    <option value="{{$profesor->rut}}">{{$profesor->nombre}}</option>
+                            @endforeach
                         </select>
                         <div class="d-grid gap-2">
                         <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
@@ -59,15 +55,29 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" style="margin-top: 20px; border-color: #5e9ace;" name="admin" id="admin">
-                        <option selected>Seleccione estudiante</option>
-                        <option value="1">Juan Carlos Bodoque</option>
-                        <option value="2">Pepe Grillo</option>
-                        </select>
-                        <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
-                        </div>
+                        <form id="perfilForm" action="" method="GET">
+                            @csrf
+                            <select id="perfilSelect" class="form-select" style="margin-top: 20px; border-color: #5e9ace;">
+                                <option value="">Seleccione estudiante</option>
+                                @foreach ($estudiantes as $estudiante)
+                                    <option value="{{ route('estudiantes.index', ['estudiante_rut' => $estudiante->rut]) }}">Ingresar como {{ $estudiante->nombre }}</option>
+                                @endforeach
+                            </select>
+                    
+                            <div class="d-grid gap-2">
+                                <button id="ingresarButton" type="button" style="margin-top: 100px; background-color: #5e9ace; color: white;" class="btn">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
+                    
+                    <script>
+                        document.getElementById("ingresarButton").addEventListener("click", function() {
+                            var selectValue = document.getElementById("perfilSelect").value;
+                            if (selectValue) {
+                                window.location.href = selectValue;
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
