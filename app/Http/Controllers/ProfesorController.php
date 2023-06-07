@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profesor_Propuesta;
 use App\Models\Profesor;
+use App\Models\Propuesta;
 
 class ProfesorController extends Controller
 {
     public function index(){
-        return view('profesores.index');
+        $propuestas = Propuesta::all();
+        return view('profesores.index',compact('propuestas'));
     }
 
     public function comment(){

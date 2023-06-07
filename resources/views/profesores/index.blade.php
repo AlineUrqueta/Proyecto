@@ -17,31 +17,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                  @foreach ($propuestas as $propuesta)
                     <tr>
-                        <td>20827854-1</td>
-                        <td>06/07/2023</td>
+                        <td>{{$propuesta->estudiante_rut}}</td>
+                        <td>{{$propuesta->fecha}}</td>
                         <td class="text" style="0px">
                           <div class="d-flex">
                             <a href="{{route('profesores.comment')}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Agregar</a>
                           </div>
                         </td>
                         <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
-                        <td>Aceptado</td>
+                        <td>{{$propuesta->estado}}</td>
                     </tr>
-                    <tr>
-                        <td>20234254-1</td>
-                        <td>06/07/2023</td>
-                        <td class="text" style="0px">
-                          <div class="d-flex ">
-                            <a href="{{route('profesores.comment')}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Cambiar</a>
-                              <button class="btn border-dark d-flex align-items-center"><span class="material-symbols-outlined">delete</span></button>
-                          </div>
-                        </td>
-                        <td><button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
-                        <td>Aceptado</td>     
-                    </tr>
-
-                    <tr>
+                    @endforeach
+                    
+                    {{--<tr>
                       <td>20827854-1</td>
                       <td>06/07/2023</td>
                       <td class="text" style="0px">
@@ -51,7 +41,7 @@
                       </td>
                       <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
                       <td>Aceptado</td>
-                  </tr>
+                  </tr>--}}
                 </tbody>
             </table>
         </div>
