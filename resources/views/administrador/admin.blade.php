@@ -87,34 +87,6 @@
                                 </td>
                             </tr>
                             @endforeach
-                            <!--
-                            <tr>
-                                <td>Tutankamon</td>
-                                <td>02-06-2023</td>
-                                <td>archivo.pdf</td>
-                                <td>
-                                    <select class="form-select" name="estado" id="estado">
-                                        <option value="1">Aceptado</option>
-                                        <option value="2">Rechazado</option>
-                                        <option value="3">Esperando revisión</option>
-                                        <option value="4">Modificar propuesta</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>El Épico</td>
-                                <td>02-06-2023</td>
-                                <td>archivo.pdf</td>
-                                <td>
-                                    <select class="form-select" name="estado" id="estado">
-                                        <option value="1">Aceptado</option>
-                                        <option value="2">Rechazado</option>
-                                        <option value="3">Esperando revisión</option>
-                                        <option value="4">Modificar propuesta</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            -->
                         </tbody>
                     </table>
                 </div>
