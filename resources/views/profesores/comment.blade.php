@@ -13,23 +13,19 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-4 d-flex flex-column">
-                            <label for="nombre" class="fw-bold">Autor </label>
+                            <label for="nombre" class="fw-bold">Autor</label>
                             <label for="apellido" class="fw-bold">Apellido</label>
                             <label for="rut" class="fw-bold">RUT</label>
                             <label for="email" class="fw-bold">Email</label>
-                            
-                            <label for="email" class="fw-bold">Tesis</label>
+                            <label for="tesis" class="fw-bold">Tesis</label>
                         </div>
                         
-
                         <div class="col-8 d-flex flex-column">
                             <label for="nombre">Basura</label>
                             <label for="apellido">apestosin</label>
                             <label for="rut">2222222-2</label>
                             <label for="email">mehacenbullyng@ayuda.com</label>
-                           
-                            
-                            <label for="email" >Tesis</label>
+                            <label for="tesis" >Tesis</label>
                         </div>
                     </div>
                 </div>
@@ -43,9 +39,6 @@
             <textarea class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
              <button class="btn btn-primary mt-3">Enviar comentario</button>
             </form>
-
-
-
         </div>
     </div>
 <div>
