@@ -23,25 +23,13 @@
                         <td>{{$propuesta->fecha}}</td>
                         <td class="text" style="0px">
                           <div class="d-flex">
-                            <a href="{{route('profesores.comment')}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Agregar</a>
+                            <a href="{{route('profesores.comment',$propuesta->estudiante_rut)}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Agregar</a>
                           </div>
                         </td>
                         <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
                         <td>{{$propuesta->estado}}</td>
                     </tr>
                     @endforeach
-                    
-                    {{--<tr>
-                      <td>20827854-1</td>
-                      <td>06/07/2023</td>
-                      <td class="text" style="0px">
-                        <div class="d-flex">
-                          <a href="{{route('profesores.comment')}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Agregar</a>
-                        </div>
-                      </td>
-                      <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
-                      <td>Aceptado</td>
-                  </tr>--}}
                 </tbody>
             </table>
         </div>

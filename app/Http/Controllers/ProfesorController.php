@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Profesor_Propuesta;
 use App\Models\Profesor;
 use App\Models\Propuesta;
+use App\Models\Estudiante;
 
 class ProfesorController extends Controller
 {
@@ -14,8 +15,10 @@ class ProfesorController extends Controller
         return view('profesores.index',compact('propuestas'));
     }
 
-    public function comment(){
-        return view('profesores.comment');
+    public function comment($estudiante_rut){
+        $estudiante = Estudiante::where('rut',$estudiante_rut)->first();
+        $propuesta = Propuesta::where('estudiante_rut',$estudiante_rut)->first();
+        return view('profesores.comment',compact('estudiante','propuesta'));
     }
 
     public function guardarComentario(Request $request){
