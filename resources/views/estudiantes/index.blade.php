@@ -1,5 +1,23 @@
 @extends('layouts.masterFinal')
 @section('contenido-principal')
+
+{{-- <div class= "mt-2">
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="#">Datos Estudiante </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.addPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.addPropuesta')}}">Añadir Propuesta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.estadoPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.estadoPropuesta')}}">Estado Propuesta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.retroalimentacion') active @endif" aria-current="page" href="{{route('estudiantes.retroalimentacion')}}">Retroalimentacion</a>
+        </li>
+    </ul>
+</div> --}}
 <div class="row m-2">           
     <div class="row m-2 mt-2">
         <div class="col-lg-4 col-m-12 ">

@@ -13,11 +13,17 @@ class PropuestaController extends Controller
         $propuesta = new Propuesta();
         $propuesta -> fecha = $request->fecha;
         $propuesta -> documento = $request->file('documento')->store('storage/public/propuestas');
-        $propuesta ->estado = Null ;
+        $propuesta ->estado = $request->estado ;
         $propuesta ->estudiante_rut = Null ;
         $propuesta ->save();
         
 
         return redirect()->route('estudiantes.addPropuesta');
-    }   
+    }
+
+    public function add(){
+        $estudiantes = Estudiante::all();
+        return view('estudiantes.addPropuesta',compact('estudiantes'));
+    }
+
 }
