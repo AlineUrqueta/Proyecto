@@ -37,15 +37,32 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" name ="profesor" id = "profesor" style="margin-top: 20px; border-color: #5e9ace;" >
-                            @foreach ($profesores as $profesor)
-                                    <option value="{{$profesor->rut}}">{{$profesor->nombre}}</option>
-                            @endforeach
-                        </select>
-                        <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
-                        </div>
+                        <form id="perfilFormP" action="" method="GET">
+                            @csrf
+                            <select id="perfilSelectP" class="form-select" style="margin-top: 20px; border-color: #5e9ace;">
+                                <option value="">Seleccione profesor</option>
+                                @foreach ($profesores as $profesor)
+                                    <option value="{{ route('profesores.index', ['profesor_rut' => $profesor->rut]) }}">Ingresar como {{ $profesor->nombre }}</option>
+                                @endforeach
+                            </select>
+                    
+                            <div class="d-grid gap-2">
+                                <button id="ingresarButtonP" type="button" style="margin-top: 100px; background-color: #5e9ace; color: white;" class="btn">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
+                    
+                    <script>
+                        document.getElementById("ingresarButtonP").addEventListener("click", function() {
+                            var selectValue = document.getElementById("perfilSelectP").value;
+                            if (selectValue) {
+                                window.location.href = selectValue;
+                            }
+                        });
+                    </script>
+                   
+                    
+                    
                 </div>
             </div>
             <div class="col-12 col-md-4">
