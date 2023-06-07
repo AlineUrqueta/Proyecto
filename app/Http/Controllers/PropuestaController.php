@@ -20,4 +20,10 @@ class PropuestaController extends Controller
 
         return redirect()->route('estudiantes.addPropuesta');
     }   
+
+    public function showPropuesta(){
+        $propuestas = Propuesta::all();
+        $propuesta = new Propuesta();
+        return view('administrador.admin',compact('propuestas','propuesta'));
+    }
 }
