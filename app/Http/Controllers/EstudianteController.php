@@ -8,8 +8,13 @@ use App\Models\Estudiante;
 class EstudianteController extends Controller
 {
     
-    public function index($estudiante_rut){
+     public function index($estudiante_rut){
         $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
+        if (!$estudiante) {
+            // Manejar el caso cuando no se encuentra el estudiante
+            abort(404);
+        }
+    
         return view('estudiantes.index', compact('estudiante'));
     }
     
