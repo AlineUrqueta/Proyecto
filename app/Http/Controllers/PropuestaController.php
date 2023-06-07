@@ -13,7 +13,7 @@ class PropuestaController extends Controller
         $propuesta = new Propuesta();
         $propuesta -> fecha = $request->fecha;
         $propuesta -> documento = $request->file('documento')->store('storage/public/propuestas');
-        $propuesta ->estado = Null ;
+        $propuesta ->estado = $request->estado ;
         $propuesta ->estudiante_rut = Null ;
         $propuesta ->save();
         
@@ -26,4 +26,11 @@ class PropuestaController extends Controller
         $propuesta = new Propuesta();
         return view('administrador.admin',compact('propuestas','propuesta'));
     }
+    
+
+    public function add(){
+        $estudiantes = Estudiante::all();
+        return view('estudiantes.addPropuesta',compact('estudiantes'));
+    }
+
 }

@@ -31,13 +31,18 @@ Route::post('/admin/profesor',[AdminController::class,'storeProfesor'])->name('a
 
 
 //Estudiante
-Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
+Route::get('/estudiantes/{rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
+
+
+//Propuesta
+Route::get('/estudiante/propuesta',[PropuestaController::class,'add'])->name('estudiante.propuesta');
+
+
 Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
 Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estudiantes.store');
 
-
-Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
-Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+// Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
+// Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
 
 
