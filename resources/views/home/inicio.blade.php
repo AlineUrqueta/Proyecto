@@ -25,7 +25,7 @@
                     <div class="card-body">
                         
                         <div class="d-grid gap-2">
-                            <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
+                            <a style="margin-top:182px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
                         </div>
                     </div>
                 </div>
