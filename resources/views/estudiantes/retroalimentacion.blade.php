@@ -1,5 +1,17 @@
 @extends('layouts.masterFinal')
 @section('contenido-principal')
+
+<div class= "mt-2">
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="{{ route('estudiantes.index', ['estudiante_rut' => $estudiante->rut]) }}">Datos Estudiante</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.propuesta') active @endif" aria-current="page" href="{{route('estudiantes.propuesta',['estudiante_rut' => $estudiante->rut])}}">Añadir Propuesta</a>
+        </li>
+    </ul>
+</div>
 <div class="row m-2">           
     <div class="row m-2 mt-2">
         <div class="col-lg-6 col-m-6">

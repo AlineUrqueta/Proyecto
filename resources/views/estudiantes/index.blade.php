@@ -9,12 +9,6 @@
         <li class="nav-item">
             <a class="nav-link @if(Route::current()->getName()=='estudiantes.propuesta') active @endif" aria-current="page" href="{{route('estudiantes.propuesta',['estudiante_rut' => $estudiante->rut])}}">Añadir Propuesta</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.estadoPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.estadoPropuesta')}}">Estado Propuesta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.retroalimentacion') active @endif" aria-current="page" href="{{route('estudiantes.retroalimentacion')}}">Retroalimentacion</a>
-        </li>
     </ul>
 </div>
 <div class="row m-2">           
@@ -48,34 +42,48 @@
             </div>
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
-            <h5 class = "mt-2 mb-4">Propuestas de {{$estudiante->nombre}}</h5>
-
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Documento</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>02-06-2023</td>
-                        <td>archivo.pdf</td>
-                        <td>Aceptado</td>
-                    </tr>
-                    <tr>
-                        <td>02-06-2023</td>
-                        <td>archivo.pdf</td>
-                        <td>Aceptado</td>
-                    </tr>
-                    <tr>
-                        <td>02-06-2023</td>
-                        <td>archivo.pdf</td>
-                        <td>Aceptado</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h5 class="mt-2 mb-4">Propuestas de {{$estudiante->nombre}}</h5>
+              
+            @if(count($propuestas)==0)
+                <div class="col">
+                    <div class="alert alert-info">
+                        No hay propuestas en la base de datos.
+                    </div>
+                </div>
+            @else
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rut</th>
+                            <th>Fecha</th>
+                            <th>Documento</th>
+                            <th>Descargar</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($propuestas as $propuesta)
+                        <tr>
+                            <td>{{$propuesta->estudiante_rut}}</td>
+                            <td>{{$propuesta->fecha}}</td>
+                            <td>{{$propuesta->documento}}</td>
+                            <td> 
+                                <button class="btn border-dark d-flex align-items-center">
+                                Descargar  <span class="material-symbols-outlined ">download</span>
+                                </button>
+                            </td>
+                            <td>
+                                <a class = "text-decoration-none" href="{{ route('estudiantes.estadoPropuesta', ['estudiante_rut' => $estudiante->rut,'propuesta_id'=> $propuesta ->id]) }}">
+                                    <button class="btn border-dark d-flex align-items-center">
+                                        Estado <span class="material-symbols-outlined">task</span>
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
     </div>
 <div>

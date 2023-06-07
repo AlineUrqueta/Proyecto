@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
+use App\Models\Propuesta;
 
 class EstudianteController extends Controller
 {
     
      public function index($estudiante_rut){
         $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
-        if (!$estudiante) {
-            // Manejar el caso cuando no se encuentra el estudiante
-            abort(404);
-        }
-    
-        return view('estudiantes.index', compact('estudiante'));
+        $propuestas = Propuesta::where('estudiante_rut', $estudiante_rut)->get();
+        return view('estudiantes.index', compact('estudiante','propuestas'));
     }
     
 
@@ -31,15 +28,17 @@ class EstudianteController extends Controller
     }
     
 
-    // public function estado(){
-    //     $estudiantes = Estudiante::all();
-    //     return view('estudiantes.estadoPropuesta',compact('estudiantes'));
-    // }
+    public function estado($estudiante_rut,$propuesta_id){
 
-    // public function retroalimentacion(){
-    //     $estudiantes = Estudiante::all();
-    //     return view('estudiantes.retroalimentacion',compact('estudiantes'));
-    // }
+        $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
+        $propuesta = Propuesta::where('id',$propuesta_id)->first();
+        return view('estudiantes.estadoPropuesta',compact('estudiante','propuesta'));
+    }
+
+    public function retroalimentacion($estudiante_rut,$propuesta_id){
+        $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
+        return view('estudiantes.retroalimentacion',compact('estudiantes'));
+    }
     
     // public function show(Estudiante $estudiante){
     //     return view('estudiantes.show',compact('estudiante'));

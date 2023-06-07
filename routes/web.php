@@ -37,12 +37,11 @@ Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index']
 //Propuesta
 Route::get('/estudiante/{estudiante_rut}/propuesta',[PropuestaController::class,'add'])->name('estudiantes.propuesta');
 Route::post('/estudiantes/{estudiante_rut}/propuesta',[PropuestaController::class,'store'])->name('estudiantes.store');
+Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController::class,'descargar'])->name('propuesta.descargar');
 
-// Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
-// Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estudiantes.store');
 
-Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
-Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
+Route::get('/estudiantes/{estudiante_rut}/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
 
 
