@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\PropuestaController;
+use App\Http\Controllers\ProfesorController;
+
 
 /*
 |--------------------------------------------------------------------------
