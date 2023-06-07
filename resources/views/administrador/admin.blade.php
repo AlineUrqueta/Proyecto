@@ -79,10 +79,10 @@
                                 <td>{{$propuesta->documento}}</td>
                                 <td>
                                     <select class="form-select" name="estado" id="estado">
-                                        <option value="aceptado" @if($propuesta->estado=="aceptado") selected="selected"@endif>Aceptado</option>
-                                        <option value="rechazado" @if($propuesta->estado=="rechazado") selected="selected"@endif>Rechazado</option>
-                                        <option value="esperando" @if($propuesta->estado=="esperando") selected="selected"@endif>Esperando revisión</option>
-                                        <option value="modificar" @if($propuesta->estado=="modificar") selected="selected"@endif>Modificar propuesta</option>
+                                        <option value=1 @if($propuesta->estado==1) selected="selected"@endif>Aceptado</option>
+                                        <option value=2 @if($propuesta->estado==2) selected="selected"@endif>Rechazado</option>
+                                        <option value=3 @if($propuesta->estado==3) selected="selected"@endif>Esperando revisión</option>
+                                        <option value=4 @if($propuesta->estado==4) selected="selected"@endif>Modificar propuesta</option>
                                     </select>
                                 </td>
                             </tr>
