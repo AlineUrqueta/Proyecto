@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
-use App\Http\Controllers\ProfesorController;
+
 use App\Http\Controllers\PropuestaController;
 
+use App\Http\Controllers\ProfesorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +46,15 @@ Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estu
 Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
+
+
+
+
+
+
+
+//Profesor
+
 Route::get('/profesores/comment', [ProfesorController::class, 'comment'])->name('profesores.comment');
 
 
@@ -55,5 +65,3 @@ Route::get('/profesores/{profesor_rut}', [ProfesorController::class, 'index'])->
 
 Route::post('/profesores/guardar-comentario', [ProfesorController::class, 'guardarComentario'])->name('profesores.guardarComentario');
 
-
-//Profesor
