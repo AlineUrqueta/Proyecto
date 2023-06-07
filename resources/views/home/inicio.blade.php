@@ -47,7 +47,7 @@
                             @endforeach
                         </select>
                         <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
+                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="{{route('profesores.index')}}" class="btn">Ingresar</a>
                         </div>
                     </div>
                 </div>
