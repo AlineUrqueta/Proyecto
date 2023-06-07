@@ -9,16 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 class PropuestaController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request,$estudiante_rut){
         $propuesta = new Propuesta();
         $propuesta -> fecha = $request->fecha;
-        $propuesta -> documento = $request->file('documento')->store('storage/public/propuestas');
-        $propuesta ->estado = $request->estado ;
-        $propuesta ->estudiante_rut = Null ;
+        $propuesta ->estudiante_rut =$estudiante_rut ;
+        $propuesta -> documento = $request->documento->store('public');
+        $propuesta ->estado = 1 ;
         $propuesta ->save();
-        
-
-        return redirect()->route('estudiantes.addPropuesta');
+        return redirect()->route('estudiantes.propuesta',$estudiante_rut);
     }   
 
     public function showPropuesta(){
@@ -28,9 +26,11 @@ class PropuestaController extends Controller
     }
     
 
-    public function add(){
-        $estudiantes = Estudiante::all();
-        return view('estudiantes.addPropuesta',compact('estudiantes'));
+    public function add($estudiante_rut){
+        $propuestas = Propuesta::all();
+        $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
+        return view('estudiantes.addPropuesta',compact('estudiante','propuestas'));
     }
+
 
 }

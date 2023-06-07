@@ -7,7 +7,7 @@
             <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="{{ route('estudiantes.index', ['estudiante_rut' => $estudiante->rut]) }}">Datos Estudiante</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @if(Route::current()->getName()=='estudiantes.addPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.addPropuesta')}}">Añadir Propuesta</a>
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.propuesta') active @endif" aria-current="page" href="{{route('estudiantes.propuesta',['estudiante_rut' => $estudiante->rut])}}">Añadir Propuesta</a>
         </li>
         <li class="nav-item">
             <a class="nav-link @if(Route::current()->getName()=='estudiantes.estadoPropuesta') active @endif" aria-current="page" href="{{route('estudiantes.estadoPropuesta')}}">Estado Propuesta</a>
