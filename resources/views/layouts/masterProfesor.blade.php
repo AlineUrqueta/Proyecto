@@ -24,7 +24,7 @@
                 <div class="container-fluid">
                     
                     <div class="col-xl-11 col-m-12">
-                        Bienvenido <span class="fw-bold">Nombre Apellido del Estudiante</span>
+                        Bienvenido <span class="fw-bold">Nombre Apellido del Profesor</span>
                     </div>
                     
                     <div class="col-xl-1 col-m-12 text-end d-lg-block">
