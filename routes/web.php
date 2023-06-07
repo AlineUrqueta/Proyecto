@@ -38,4 +38,6 @@ Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estu
 Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
+
+
 //Profesor

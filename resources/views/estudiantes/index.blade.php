@@ -19,14 +19,11 @@
                         
 
                         <div class="col-8 d-flex flex-column">
-                            <label for="nombre">nombre</label>
-                            <label for="apellido">apellido</label>
-                            <label for="rut">rut</label>
-                            <label for="email">email</label>
-                            {{-- <label for="nombre">{{estudiante->nombre}}</label>
-                            <label for="apellido">{{estudiante->apellido}}</label>
-                            <label for="rut">{{estudiante->rut}}</label>
-                            <label for="email">{{estudiante->email}}</label> --}}
+                            <label for="nombre">{{ $estudiante->nombre }}</label>
+                            <label for="apellido">{{ $estudiante->apellido }}</label>
+                            <label for="rut">{{ $estudiante->rut }}</label>
+                            <label for="email">{{ $estudiante->email }}</label>
+                           
                         </div>
                     </div>
                 </div>

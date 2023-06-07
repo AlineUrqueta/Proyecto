@@ -55,15 +55,29 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" name="estudiante" id="estudiante"style="margin-top: 20px; border-color: #5e9ace;" >
-                            @foreach ($estudiantes as $estudiante)
-                                    <option value="{{$estudiante->rut}}">{{$estudiante->nombre}}</option>
-                            @endforeach
-                        </select>
-                        <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
-                        </div>
+                        <form id="perfilForm" action="" method="GET">
+                            @csrf
+                            <select id="perfilSelect" class="form-select" style="margin-top: 20px; border-color: #5e9ace;">
+                                <option value="">Seleccione estudiante</option>
+                                @foreach ($estudiantes as $estudiante)
+                                    <option value="{{ route('estudiantes.index', ['estudiante_rut' => $estudiante->rut]) }}">Ingresar como {{ $estudiante->nombre }}</option>
+                                @endforeach
+                            </select>
+                    
+                            <div class="d-grid gap-2">
+                                <button id="ingresarButton" type="button" style="margin-top: 100px; background-color: #5e9ace; color: white;" class="btn">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
+                    
+                    <script>
+                        document.getElementById("ingresarButton").addEventListener("click", function() {
+                            var selectValue = document.getElementById("perfilSelect").value;
+                            if (selectValue) {
+                                window.location.href = selectValue;
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>

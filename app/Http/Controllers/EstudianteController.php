@@ -8,10 +8,17 @@ use App\Models\Estudiante;
 class EstudianteController extends Controller
 {
     
-    public function index( $estudiante_rut){
-        $estudiante = Estudiante::findOrFail($estudiante_rut);
-        return view('estudiantes.index',compact('estudiante'));
+    public function index($estudiante_rut)
+{
+    $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
+    if (!$estudiante) {
+        // Manejar el caso cuando no se encuentra el estudiante
+        abort(404);
     }
+
+    return view('estudiantes.index', compact('estudiante'));
+}
+    
 
 
     public function add(){
@@ -23,6 +30,7 @@ class EstudianteController extends Controller
         $estudiantes = Estudiante::all();
         return view('estudiantes.addPropuesta',compact('estudiantes'));
     }
+    
 
     // public function estado(){
     //     $estudiantes = Estudiante::all();
