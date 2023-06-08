@@ -28,7 +28,15 @@
                           </div>
                         </td>
                         <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>
-                        <td>{{$propuesta->estado}}</td>
+                        @if($propuesta->estado == 1)
+                            <td>Aceptado</td>
+                        @elseif($propuesta->estado == 2)
+                            <td>Rechazado</td>
+                        @elseif($propuesta->estado == 3)
+                            <td>Esperando revisión</td>
+                        @else
+                            <td>Modificar propuesta</td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

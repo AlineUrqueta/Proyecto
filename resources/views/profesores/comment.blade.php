@@ -17,7 +17,6 @@
                             <label for="apellido" class="fw-bold">Apellido</label>
                             <label for="rut" class="fw-bold">RUT</label>
                             <label for="email" class="fw-bold">Email</label>
-                            <label for="tesis" class="fw-bold">Tesis</label>
                         </div>
                         
                         <div class="col-8 d-flex flex-column">
@@ -25,30 +24,18 @@
                             <label for="apellido">{{$estudiante->apellido}}</label>
                             <label for="rut">{{$estudiante->rut}}</label>
                             <label for="email">{{$estudiante->email}}</label>
-                            <label for="tesis">Tesis</label>
                         </div>
-
-                        <!--
-                        <div class="col-8 d-flex flex-column">
-                            <label for="nombre">Basura</label>
-                            <label for="apellido">apestosin</label>
-                            <label for="rut">2222222-2</label>
-                            <label for="email">mehacenbullyng@ayuda.com</label>
-                            <label for="tesis" >Tesis</label>
-                        </div>
-                        -->
-
                     </div>
                 </div>
                 
             </div>
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
-            <form action="{{ route('profesores.guardarComentario') }}" method="POST">
+            <form action="{{route('profesores.storeComentario',['id_propuesta'=>$propuesta->id,'rut_profesor'=>'19345987-1']) }}" method="POST">
                 @csrf
             <h5 class = "mt-2 mb-4">Comentario </h5>
-            <textarea class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
-             <button class="btn btn-primary mt-3">Enviar comentario</button>
+            <textarea id="comentario" class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
+             <button type = "submit" class="btn btn-primary mt-3">Enviar comentario</button>
             </form>
         </div>
     </div>

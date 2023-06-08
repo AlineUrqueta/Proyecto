@@ -41,17 +41,28 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" name ="profesor" id = "profesor" style="margin-top: 20px; border-color: #5e9ace;" >
+                        <select  id="perfilProfeSelect" class="form-select" style="margin-top: 20px; border-color: #5e9ace;" >
+                            <option value="">Seleccione profesor</option>
                             @foreach ($profesores as $profesor)
-                                    <option value="{{$profesor->rut}}">{{$profesor->nombre}}</option>
+                                <option value="{{route('profesores.index',['profesor_rut' => $profesor->rut])}}">Ingresar como {{$profesor->nombre}}</option>
                             @endforeach
                         </select>
                         <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="{{route('profesores.index')}}" class="btn">Ingresar</a>
+                        <a id="ingresarProfeButton" style="margin-top: 100px; background-color: #5e9ace; color: white;" class="btn">Ingresar</a>
                         </div>
                     </div>
+                    <script>
+                        document.getElementById("ingresarProfeButton").addEventListener("click", function() {
+                            var selectValue = document.getElementById("perfilProfeSelect").value;
+                            if (selectValue) {
+                                window.location.href = selectValue;
+                            }
+                        });
+                    </script>
                 </div>
             </div>
+
+
             <div class="col-12 col-md-4">
                 <div class="card text-center m-2">
                     <div class="card-header" style="background-color: #5e9ace; color: white;">
