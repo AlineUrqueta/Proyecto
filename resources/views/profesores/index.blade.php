@@ -23,7 +23,8 @@
                         <td>{{$propuesta->fecha}}</td>
                         <td class="text" style="0px">
                           <div class="d-flex">
-                            <a href="{{route('profesores.comment',$propuesta->estudiante_rut)}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">Agregar</a>
+                            <a href="{{route('profesores.comment',$propuesta->estudiante_rut)}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
+                                Agregar <span class="material-symbols-outlined">add_comment</span></a>
                           </div>
                         </td>
                         <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>

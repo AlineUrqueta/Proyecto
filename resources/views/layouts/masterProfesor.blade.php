@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profesor</title>
     
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 </head>
@@ -24,7 +24,7 @@
                 <div class="container-fluid">
                     
                     <div class="col-xl-11 col-m-12">
-                        Bienvenido <span class="fw-bold">Nombre Apellido del Profesor</span>
+                        <h5><span class="material-symbols-outlined">interactive_space</span> Bienvenido</h5>
                     </div>
                     
                     <div class="col-xl-1 col-m-12 text-end d-lg-block">
