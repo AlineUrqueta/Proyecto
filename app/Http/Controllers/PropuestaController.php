@@ -57,6 +57,7 @@ class PropuestaController extends Controller
 
             Storage::delete($propuesta->documento);
 
+            
             $propuesta -> documento = $request->file('documento');
             $nom_doc = $propuesta->documento->getClientOriginalName();
             $propuesta -> documento->storeAs('',$nom_doc.".".$propuesta->documento->getClientOriginalExtension(),'public');

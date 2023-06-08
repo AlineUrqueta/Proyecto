@@ -22,6 +22,7 @@ Route::get('/',[HomeController::class,'index'])->name('home.inicio');
 //Administrador
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
 Route::get('/admin',[PropuestaController::class,'showPropuesta'])->name('administrador.admin');
+Route::post('/admin/estado/{propuesta_id}',[AdminController::class,'cambiarEstado'])->name('administrador.estado');
 
 Route::get('/admin/estudiante',[AdminController::class,'showEstudiante'])->name('administrador.estudiante');
 Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
