@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
+
 use App\Http\Controllers\PropuestaController;
 
+use App\Http\Controllers\ProfesorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,4 +57,20 @@ Route::get('/exportpdf',[PropuestaController::class,'exportpdf'])->name('exportp
 
 
 
+
+
+
+
+
 //Profesor
+
+Route::get('/profesores/comment', [ProfesorController::class, 'comment'])->name('profesores.comment');
+
+
+Route::get('/profesores/{profesor_rut}', [ProfesorController::class, 'index'])->name('profesores.index');
+
+ 
+
+
+Route::post('/profesores/guardar-comentario', [ProfesorController::class, 'guardarComentario'])->name('profesores.guardarComentario');
+
