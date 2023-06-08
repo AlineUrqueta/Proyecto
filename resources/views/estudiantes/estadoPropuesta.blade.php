@@ -127,47 +127,47 @@
                 </div>
             </div>
             <div class="col-lg-4 col-s-12">
-                            @if ($propuesta->estado == 4)
-                            <div class="card">
-                                <div class="card-header">
-                                    Formulario
+                @if ($propuesta->estado == 4)
+                <div class="card">
+                    <div class="card-header">
+                        Formulario
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('estudiantes.update',['estudiante_rut' => $estudiante->rut,'propuesta_id'=>$propuesta->id])}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('put')
+                            <!-- for, id y name deben tener el mismo nombre. -->
+
+                            <div class="row">
+
+                                <div class="col-12 d-flex flex-column">
+                                    <div class="m-2">
+                                        <label for="fecha" class="fw-bold mb-2">Fecha </label>
+                                        <input type="date" name="fecha" id="fecha" class="form-control">
+                                    </div>
+                                    <div class="m-2">
+                                        <label for="documento" class="fw-bold mb-2">Documento</label>
+                                        <input type="file" id="documento" name = "documento" class="form-control">
+                                    </div>
+                                    
                                 </div>
-                                <div class="card-body">
-                                    <form action="{{route('estudiantes.update',['estudiante_rut' => $estudiante->rut,'propuesta_id'=>$propuesta->id])}}" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('put')
-                                        <!-- for, id y name deben tener el mismo nombre. -->
 
-                                        <div class="row">
+                            </div>
 
-                                            <div class="col-12 d-flex flex-column">
-                                                <div class="m-2">
-                                                    <label for="fecha" class="fw-bold mb-2">Fecha </label>
-                                                    <input type="date" name="fecha" id="fecha" class="form-control">
-                                                </div>
-                                                <div class="m-2">
-                                                    <label for="documento" class="fw-bold mb-2">Documento</label>
-                                                    <input type="file" id="documento" name = "documento" class="form-control">
-                                                </div>
-                                                
-                                            </div>
-
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="mt-4 mb-3 d-grid gap-2 d-block">
-                                                <button type="submit" class="btn btn-primary">Añadir Propuesta</button>
-                                            </div>
-                                        </div>
-
-                                    </form>
-
-
+                            <div class="row">
+                                <div class="mt-4 mb-3 d-grid gap-2 d-block">
+                                    <button type="submit" class="btn btn-primary">Añadir Propuesta</button>
                                 </div>
                             </div>
-                            @endif
+
+                        </form>
+
+
+                    </div>
+                </div>
+                @endif
                         
-                        </div>
+            </div>
             
             
         </div>
