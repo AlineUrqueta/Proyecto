@@ -25,7 +25,7 @@ class ProfesorController extends Controller
         return view('profesores.comment',compact('estudiante','propuesta'));
     }
 
-    public function storeComentario(Request $request,$id_propuesta,$rut_profesor){
+    public function storeComentario(Request $request,$rut_profesor,$id_propuesta){
         $profeProp = new Profesor_Propuesta();
         $profeProp->propuesta_id = $id_propuesta;
         $profeProp->profesor_rut = $rut_profesor;

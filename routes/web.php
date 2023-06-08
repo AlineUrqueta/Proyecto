@@ -45,5 +45,5 @@ Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroa
 
 //Profesor
 Route::get('/profesores/{profesor_rut}',[ProfesorController::class,'index'])->name('profesores.index');
-Route::get('/profesores/comment/{estudiante_rut}',[ProfesorController::class,'comment'])->name('profesores.comment');
-Route::post('/profesores/comment/{estudiante_rut}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
+Route::get('/profesores/{profesor_rut}/comment/{estudiante_rut}',[ProfesorController::class,'comment'])->name('profesores.comment');
+Route::post('/profesores/{profesor_rut}/comment/{estudiante_rut}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
