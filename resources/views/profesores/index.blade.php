@@ -23,7 +23,7 @@
                         <td>{{$propuesta->fecha}}</td>
                         <td class="text" style="0px">
                           <div class="d-flex">
-                            <a href="{{route('profesores.comment',['profesor_rut'=>$profesor->rut,'estudiante_rut'=>$propuesta->estudiante_rut])}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
+                            <a href="{{route('profesores.comment',['profesor_rut'=>$profesor->rut,'estudiante_rut'=>$propuesta->estudiante_rut,'id_propuesta'=>$propuesta->id])}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
                                 Agregar <span class="material-symbols-outlined">add_comment</span></a>
                           </div>
                         </td>

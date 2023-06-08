@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -34,7 +34,7 @@
         </div>
 
         
-        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
+        <div class="container-fluid bg-body-tertiary  border border-5 rounded mb-2" style = "height:auto;">
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -68,7 +68,8 @@
                                 <th>RUT Alumno</th>
                                 <th>Fecha</th>
                                 <th>Documento</th>
-                                <th>Estado</th>
+                                <th colspan= 2>Estado</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -77,14 +78,29 @@
                                 <td>{{$propuesta->estudiante_rut}}</td>
                                 <td>{{$propuesta->fecha}}</td>
                                 <td>{{$propuesta->documento}}</td>
-                                <td>
+                                
+                                <form action="{{route('administrador.estado',['propuesta_id'=> $propuesta->id])}}" method="post">
+                                    @csrf
+                                    <td>
                                     <select class="form-select" name="estado" id="estado">
                                         <option value=1 @if($propuesta->estado==1) selected="selected"@endif>Aceptado</option>
                                         <option value=2 @if($propuesta->estado==2) selected="selected"@endif>Rechazado</option>
                                         <option value=3 @if($propuesta->estado==3) selected="selected"@endif>Esperando revisión</option>
                                         <option value=4 @if($propuesta->estado==4) selected="selected"@endif>Modificar propuesta</option>
                                     </select>
-                                </td>
+                                    </td>
+                                    <td>
+                                        <button class="btn border-dark d-flex align-items-center" type = "submit">
+                                        Estado <span class="material-symbols-outlined">task</span>
+                                        </button>
+
+                                    </td>
+                                    
+                                    
+                                </form>
+                                    
+                                    
+                                
                             </tr>
                             @endforeach
                         </tbody>

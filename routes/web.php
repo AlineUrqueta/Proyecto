@@ -24,6 +24,7 @@ Route::get('/',[HomeController::class,'index'])->name('home.inicio');
 //Administrador
 Route::get('/admin',[AdminController::class,'index'])->name('administrador.admin');
 Route::get('/admin',[PropuestaController::class,'showPropuesta'])->name('administrador.admin');
+Route::post('/admin/estado/{propuesta_id}',[AdminController::class,'cambiarEstado'])->name('administrador.estado');
 
 Route::get('/admin/estudiante',[AdminController::class,'showEstudiante'])->name('administrador.estudiante');
 Route::post('/admin/estudiante',[AdminController::class,'storeEstudiante'])->name('administrador.storeEstudiante');
@@ -34,16 +35,22 @@ Route::post('/admin/profesor',[AdminController::class,'storeProfesor'])->name('a
 
 //Estudiante
 Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index'])->name('estudiantes.index');
-Route::get('/estudiantes/add',[EstudianteController::class,'show'])->name('estudiantes.addPropuesta');
-Route::post('/estudiantes/add',[PropuestaController::class,'store'])->name('estudiantes.store');
 
 
-Route::get('/estudiantes/estado',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
-Route::get('/estudiantes/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+//Propuesta
+Route::get('/estudiante/{estudiante_rut}/propuesta',[PropuestaController::class,'add'])->name('estudiantes.propuesta');
+Route::post('/estudiantes/{estudiante_rut}/propuesta',[PropuestaController::class,'store'])->name('estudiantes.store');
+Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController::class,'descargar'])->name('propuesta.descargar');
+
+
+Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
+Route::put('/estudiantes/{estudiante_rut}/estado/{propuesta_id}/update',[PropuestaController::class,'update'])->name('estudiantes.update');
+
+Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
 
 
 //Profesor
 Route::get('/profesores/{profesor_rut}',[ProfesorController::class,'index'])->name('profesores.index');
-Route::get('/profesores/{profesor_rut}/comment/{estudiante_rut}',[ProfesorController::class,'comment'])->name('profesores.comment');
-Route::post('/profesores/{profesor_rut}/comment/{estudiante_rut}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
+Route::get('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}',[ProfesorController::class,'comment'])->name('profesores.comment');
+Route::post('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');

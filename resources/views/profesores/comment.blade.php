@@ -38,7 +38,7 @@
             <h5 class = "mt-2 mb-4">Comentario </h5>
             <!--<textarea id="comentario" class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>-->
             <label for="comentario">Escribe tu comentario aquí</label>
-            <input id="comentario"  name="comentario" class="form-control" type="text">
+            <input id="comentario" name="comentario" class="form-control" type="text">
              <button type = "submit" class="btn btn-primary mt-3">Enviar comentario</button>
             </form>
         </div>

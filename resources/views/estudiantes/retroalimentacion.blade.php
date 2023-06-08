@@ -1,5 +1,17 @@
 @extends('layouts.masterFinal')
 @section('contenido-principal')
+
+<div class= "mt-2">
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.index') active @endif" aria-current="page" href="{{ route('estudiantes.index', ['estudiante_rut' => $estudiante->rut]) }}">Datos Estudiante</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @if(Route::current()->getName()=='estudiantes.propuesta') active @endif" aria-current="page" href="{{route('estudiantes.propuesta',['estudiante_rut' => $estudiante->rut])}}">Añadir Propuesta</a>
+        </li>
+    </ul>
+</div>
 <div class="row m-2">           
     <div class="row m-2 mt-2">
         <div class="col-lg-6 col-m-6">
@@ -17,7 +29,7 @@
                                 <label for="nomEstudiante" class="form-label mb-3">Nombre</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" name="nomEstudiante" id="nomEstudiante"class="form-control mb-2" disable>
+                                <input type="text" name="nomEstudiante" id="nomEstudiante"class="form-control mb-2" value ="{{$estudiante->nombre}}">
                             </div>
                         </div>
                         <div class="row">
@@ -26,7 +38,7 @@
                                 
                             </div>
                             <div class="col-8">
-                                <input type="text" name="apeEstudiante" id="apeEstudiante" class="form-control">
+                                <input type="text" name="apeEstudiante" id="apeEstudiante" class="form-control" value ="{{$estudiante->apellido}}">
                             </div>
                         </div>
                         <div class="row">
@@ -34,7 +46,7 @@
                                 <label for="fechaEntrega" class="form-label mb-3">Fecha Entrega</label>
                             </div>
                             <div class="col-8">
-                                <input type="date" name="fechaEntrega" id="fechaEntrega"class="form-control mb-2">
+                                <input type="date" name="fechaEntrega" id="fechaEntrega"class="form-control mb-2" value ="{{$propuesta->fecha}}">
                             </div>
                         </div>
 
@@ -45,8 +57,6 @@
                             </div>
                             <div class="col-8">
                                 <input type="text" name="nomProfesor" id="nomProfesor" class="form-control mb-2">
-                                    
-
                             </div>
                         </div>
                         <div class="row">
@@ -80,9 +90,11 @@
                                 <label for="estado" class="form-label mb-3">Estado Propuesta</label>
                             </div>
                             <div class="col-8">
-                                <select class="form-select mb-2" aria-label="Disabled select example" disabled>
-                                        <option selected>Aceptado</option>
-                                </select>      
+                                @if($propuesta->estado == 4)
+                                    <input type="text" name="estado" id="estado" class="form-control mb-2" value = "Modificar Propuesta">   
+                                
+                                @endif
+                                
                             </div>
                         </div>
                         <div class="row">

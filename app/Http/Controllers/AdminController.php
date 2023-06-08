@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Profesor;
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
+use App\Models\Propuesta;
+
 
 class AdminController extends Controller
 {
@@ -47,5 +49,12 @@ class AdminController extends Controller
         $estudiante -> save();
         return redirect()->route('administrador.estudiante');
 
+    }
+
+    public function cambiarEstado(Request $request, $propuesta_id){
+        $propuesta = Propuesta::where('id',$propuesta_id)->first();
+        $propuesta ->estado = $request ->estado ;
+        $propuesta->save();
+        return redirect()->route('administrador.admin');
     }
 }
