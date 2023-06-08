@@ -26,27 +26,21 @@ class ProfesorController extends Controller
         return view('profesores.comment',compact('profesor','estudiante','propuesta'));
     }
 
-    public function storeComentario(Request $request,$rut_profesor,$id_propuesta){
+    public function storeComentario(Request $request,$rut_estudiante,$rut_profesor,$id_propuesta){
         $profeProp = new Profesor_Propuesta();
         $profeProp->propuesta_id = $id_propuesta;
-        $profeProp->profesor_rut = $rut_profesor;
+        $profeProp->profesor_rut = $rut_estudiante;
         $fechaHora = Carbon::now();
         $profeProp->fecha = $fechaHora->toDateString();
         $profeProp->hora = $fechaHora->toTimeString();
         $profeProp->comentario = $request->comentario;
         
         $profeProp->save();
-        return redirect()->route('profesores.comment')->with('success', 'Comentario guardado exitosamente');
+        return redirect()->route('profesores.exito',['estudiante_rut' => $rut_estudiante, 'profesor_rut'=>$rut_profesor,'id_propuesta'=>$id_propuesta])->with('success', 'Comentario guardado exitosamente');
 
     }
 
-    public function guardarComentario(Request $request){
-        $comentario = $request->input('comentario');
-        // Guardar el comentario en la base de datos
-        Profesor_Propuesta::create([
-            'comentario' => $comentario
-        ]);
-        // Redireccionar a la página de comentarios exitosamente guardado
-        return redirect()->route('profesores.index')->with('success', 'Comentario guardado exitosamente');
+    public function exito(){
+        return view('profesores.exito');
     }
 }
