@@ -10,6 +10,8 @@
     <title>Bienvenido</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 @section('estilo-aqui')
@@ -22,31 +24,53 @@
                     <div class="card-header" style="background-color: #5e9ace; color: white;">
                         <h4 class="card-title">Administrador </h4>
                     </div>
-                    <div class="card-body">  
+                    <div class="card-body">
+                        <div class="row">
+                            <span style="margin-top: 68px" class="material-icons">build</span>
+                        </div>
                         <div class="d-grid gap-2">
-                            <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
+                            <a style="margin-top:90px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+             <div class="col-12 col-md-4">
                 <div class="card text-center m-2">
                     <div class="card-header" style="background-color: #5e9ace; color: white;">
                         <h4 class="card-title">Profesor</h4>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Seleccione perfil:</h5>
-                        <select class="form-select" name ="profesor" id = "profesor" style="margin-top: 20px; border-color: #5e9ace;" >
-                            @foreach ($profesores as $profesor)
-                                    <option value="{{$profesor->rut}}">{{$profesor->nombre}}</option>
-                            @endforeach
-                        </select>
-                        <div class="d-grid gap-2">
-                        <a style="margin-top: 100px; background-color: #5e9ace; color: white;" href="#" class="btn">Ingresar</a>
-                        </div>
+                        <form id="perfilFormP" action="" method="GET">
+                            @csrf
+                            <select id="perfilSelectP" class="form-select" style="margin-top: 20px; border-color: #5e9ace;">
+                                <option value="">Seleccione profesor</option>
+                                @foreach ($profesores as $profesor)
+                                    <option value="{{ route('profesores.index', ['profesor_rut' => $profesor->rut]) }}">Ingresar como {{ $profesor->nombre }}</option>
+                                @endforeach
+                            </select>
+                    
+                            <div class="d-grid gap-2">
+                                <button id="ingresarButtonP" type="button" style="margin-top: 100px; background-color: #5e9ace; color: white;" class="btn">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
+                    
+                    <script>
+                        document.getElementById("ingresarButtonP").addEventListener("click", function() {
+                            var selectValue = document.getElementById("perfilSelectP").value;
+                            if (selectValue) {
+                                window.location.href = selectValue;
+                            }
+                        });
+                    </script>
+                   
+                    
+                    
                 </div>
             </div>
+
+
             <div class="col-12 col-md-4">
                 <div class="card text-center m-2">
                     <div class="card-header" style="background-color: #5e9ace; color: white;">

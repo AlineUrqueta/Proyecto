@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\PropuestaController;
+use App\Http\Controllers\ProfesorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +51,6 @@ Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[Est
 
 
 //Profesor
+Route::get('/profesores/{profesor_rut}',[ProfesorController::class,'index'])->name('profesores.index');
+Route::get('/profesores/comment/{estudiante_rut}',[ProfesorController::class,'comment'])->name('profesores.comment');
+Route::post('/profesores/comment/{estudiante_rut}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
