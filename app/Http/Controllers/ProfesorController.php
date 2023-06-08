@@ -19,13 +19,14 @@ class ProfesorController extends Controller
     }
 
 
-    public function comment($estudiante_rut){
+    public function comment($profesor_rut,$estudiante_rut){
+        $profesor = Profesor::where('rut',$profesor_rut)->first();
         $estudiante = Estudiante::where('rut',$estudiante_rut)->first();
         $propuesta = Propuesta::where('estudiante_rut',$estudiante_rut)->first();
-        return view('profesores.comment',compact('estudiante','propuesta'));
+        return view('profesores.comment',compact('profesor','estudiante','propuesta'));
     }
 
-    public function storeComentario(Request $request,$id_propuesta,$rut_profesor){
+    public function storeComentario(Request $request,$rut_profesor,$id_propuesta){
         $profeProp = new Profesor_Propuesta();
         $profeProp->propuesta_id = $id_propuesta;
         $profeProp->profesor_rut = $rut_profesor;

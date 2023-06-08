@@ -9,7 +9,7 @@ class Profesor_Propuesta extends Model
 {
     use HasFactory;
 
-    protected $table = 'profesores_propuestas';
+    protected $table = 'profesor_propuesta';
 
     public function propuestas(){
         return $this->belongsTo('App\Models\Propuesta');
