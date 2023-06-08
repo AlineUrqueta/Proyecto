@@ -56,7 +56,7 @@
                                 <label for="nomProfesor" class="form-label mb-3">Nombre</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" name="nomProfesor" id="nomProfesor" class="form-control mb-2">
+                                <input type="text" name="nomProfesor" id="nomProfesor" class="form-control mb-2" value ="{{$profesor->nombre}}">
                             </div>
                         </div>
                         <div class="row">
@@ -64,7 +64,7 @@
                                 <label for="apeProfesor" class="form-label mb-3">Apellido</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" name="apeProfesor" id="apeProfesor" class="form-control mb-2">
+                                <input type="text" name="apeProfesor" id="apeProfesor" class="form-control mb-2" value ="{{$profesor->apellido}}">
                                     
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <label for="HoraRevision" class="form-label mb-3">Hora Revision</label>
                             </div>
                             <div class="col-8">
-                                <input type="time" name="horaRevision" id="horaRevision" class="form-control mb-2"> 
+                                <input type="time" name="horaRevision" id="horaRevision" class="form-control mb-2" value ="{{$profesor_propuesta->hora}}"> 
                             </div>
                         </div>
                         <div class="row">
@@ -102,15 +102,36 @@
                                 <label for="comentario" class="form-label mb-3">Comentario</label>
                             </div>
                             <div class="col-8">
-                                <textarea name="comentario" id="comentario" class = "form-control" style = "max-width: auto;  max-height: 200px;min-height: 200px" cols="30" rows="10"></textarea>
+                                <textarea name="comentario" id="comentario" class = "form-control" style = "max-width: auto;  max-height: 200px;min-height: 200px" cols="30" rows="10">
+                                {{$profesor_propuesta->comentario}}</textarea>
                             </div>
                         </div>
                         
                     </fieldset>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 text-end d-grid gap-2 d-lg-block mt-3">
+                                <a class = "text-decoration-none ml-auto btn border-dark " href="{{ route('estudiantes.estadoPropuesta', ['estudiante_rut' => $estudiante->rut,'propuesta_id'=> $propuesta ->id]) }}">
+                                    Volver a Estado <span class="material-symbols-outlined">task</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+                    
+                    
+                    
+                    
                                                    
                 </div>
                 
             </div>
+            
+            
         </div>
     </div>  
         

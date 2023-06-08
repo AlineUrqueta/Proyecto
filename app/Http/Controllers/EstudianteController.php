@@ -41,8 +41,9 @@ class EstudianteController extends Controller
         $propuesta = Propuesta::where('id',$propuesta_id)->first();
         $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
         $profesor_propuesta = Profesor_Propuesta::where('propuesta_id',$propuesta_id)->first();
-        //$profesor = Profesor::where('rut',$profesor_propuesta->profesor_rut)->first();
-        return view('estudiantes.retroalimentacion',compact('estudiante','propuesta','profesor_propuesta'));
+        $rut = $profesor_propuesta->profesor_rut;
+        $profesor = Profesor::where('rut',$rut)->first();
+        return view('estudiantes.retroalimentacion',compact('estudiante','propuesta','profesor_propuesta','profesor'));
     }
     
     
