@@ -73,7 +73,7 @@
                                 <label for="fechaRevision" class="form-label mb-3">Fecha Revision</label>
                             </div>
                             <div class="col-8">
-                                <input type="date" name="fechaRevision" id="fechaRevision" class="form-control mb-2">
+                                <input type="date" name="fechaRevision" id="fechaRevision" class="form-control mb-2" value ="{{$profesor_propuesta->fecha}}">
                                     
                             </div>
                         </div>

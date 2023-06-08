@@ -42,7 +42,6 @@ Route::get('/estudiante/{estudiante_rut}/propuesta',[PropuestaController::class,
 Route::post('/estudiantes/{estudiante_rut}/propuesta',[PropuestaController::class,'store'])->name('estudiantes.store');
 Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController::class,'descargar'])->name('propuesta.descargar');
 
-
 Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::put('/estudiantes/{estudiante_rut}/estado/{propuesta_id}/update',[PropuestaController::class,'update'])->name('estudiantes.update');
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Propuesta;
+use App\Models\Profesor_Propuesta;
+use App\Models\Profesor;
 
 class EstudianteController extends Controller
 {
@@ -38,7 +40,9 @@ class EstudianteController extends Controller
     public function retroalimentacion($estudiante_rut,$propuesta_id){
         $propuesta = Propuesta::where('id',$propuesta_id)->first();
         $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
-        return view('estudiantes.retroalimentacion',compact('estudiante','propuesta'));
+        $profesor_propuesta = Profesor_Propuesta::where('propuesta_id',$propuesta_id)->first();
+        //$profesor = Profesor::where('rut',$profesor_propuesta->profesor_rut)->first();
+        return view('estudiantes.retroalimentacion',compact('estudiante','propuesta','profesor_propuesta'));
     }
     
     
