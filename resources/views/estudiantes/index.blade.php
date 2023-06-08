@@ -68,10 +68,12 @@
                             <td>{{$propuesta->fecha}}</td>
                             <td>{{$propuesta->documento}}</td>
                             <td> 
-                                <a class = "text-decoration-none" href="{{ route('propuesta.descargar', ['estudiante_rut' => $estudiante->rut,'doc' => $propuesta->documento]) }}"><button class="btn border-dark d-flex align-items-center">
-                                Descargar  <span class="material-symbols-outlined ">download</span>
-                                
-                                </button></a>
+                                <a class="text-decoration-none" href="{{ route('estudiantes.descargar', ['estudiante_rut' => $estudiante->rut, 'doc' => $propuesta->documento]) }}">
+                                    <button class="btn border-dark d-flex align-items-center">
+                                        Descargar <span class="material-symbols-outlined ">download</span>
+                                    </button>
+                                </a>
+
                             </td>
                             <td>
                                 <a class = "text-decoration-none" href="{{ route('estudiantes.estadoPropuesta', ['estudiante_rut' => $estudiante->rut,'propuesta_id'=> $propuesta ->id]) }}">

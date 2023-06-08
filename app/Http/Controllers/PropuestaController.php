@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propuesta;
 use App\Models\Estudiante;
-use Illuminate\Support\Facades\Storage;
+
 
 class PropuestaController extends Controller
 {
@@ -38,15 +38,10 @@ class PropuestaController extends Controller
         return view('estudiantes.addPropuesta',compact('estudiante','propuestas'));
     }
 
-    public function descargar($estudiante_rut,$propuesta_id){
-        $doc = Propuesta::findOrFail($propuesta_id);
-        $ruta_doc = $doc -> documento;
-        if (Storage::disk('public')->exist($ruta_doc)){
-            return Storage::disk('public')->download($ruta_doc);
-        }
-                //return Storage::download($ruta_doc);
+    
+   
 
-    }
+    
 
     public function update($estudiante_rut,$propuesta_id,Request $request){
         $propuesta = Propuesta::where('estudiante_rut', $estudiante_rut)->get();
@@ -70,7 +65,8 @@ class PropuestaController extends Controller
 
     }
 
-
+    
+    
 
 
 

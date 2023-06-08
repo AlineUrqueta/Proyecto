@@ -38,13 +38,20 @@ Route::get('/estudiantes/{estudiante_rut}',[EstudianteController::class,'index']
 //Propuesta
 Route::get('/estudiante/{estudiante_rut}/propuesta',[PropuestaController::class,'add'])->name('estudiantes.propuesta');
 Route::post('/estudiantes/{estudiante_rut}/propuesta',[PropuestaController::class,'store'])->name('estudiantes.store');
-Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController::class,'descargar'])->name('propuesta.descargar');
+
+//Route::get('/estudiantes/{estudiante_rut}/propuesta/{propuesta_id}/descargar', [PropuestaController::class, 'descargar'])->name('estudiantes.descargar');
+
+///Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}', [PropuestaController::class, 'descargar'])->name('estudiantes.descargar');
+
+//Route::get('/estudiantes/{estudiante_rut}/descargar/{doc}', [PropuestaController::class, 'descargar'])->name('estudiantes.descargar');
+Route::get('/estudiantes/{estudiante_rut}/descargar/{doc}', [EstudianteController::class, 'descargar'])->name('estudiantes.descargar');
 
 
 Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::put('/estudiantes/{estudiante_rut}/estado/{propuesta_id}/update',[PropuestaController::class,'update'])->name('estudiantes.update');
 
 Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+Route::get('/exportpdf',[PropuestaController::class,'exportpdf'])->name('exportpdf');
 
 
 
