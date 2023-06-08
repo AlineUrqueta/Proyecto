@@ -90,11 +90,34 @@
                                     </select>
                                     </td>
                                     <td>
-                                        <button class="btn border-dark d-flex align-items-center" type = "submit">
-                                        Estado <span class="material-symbols-outlined">task</span>
+                                        
+                                        <button class = "btn border-dark d-flex align-items-center" type ="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            Cambiar Estado <span class="material-symbols-outlined">task</span>
                                         </button>
 
                                     </td>
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Administrador - Estado de Propuesta</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    ¿Desea cambiar el estado de la propuesta?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="{{route('administrador.admin')}}" class = "text-decoration-none">
+                                                        <button type="button" class="btn border-danger d-flex align-items-center" data-bs-dismiss="modal">Cancelar</button>
+                                                    </a>
+                                                    <button class="btn border-dark d-flex align-items-center" type = "submit" >
+                                                    Confirmar <span class="material-symbols-outlined">task</span>
+                                                    </button>
+                                                    
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
                                     
                                 </form>
@@ -108,6 +131,19 @@
                 </div>
             </div>
         </div>
+
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+            integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
+            <script>
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+            </script>
 </body>
 @endsection
 
