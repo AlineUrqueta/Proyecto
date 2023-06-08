@@ -10,10 +10,14 @@ use App\Models\Estudiante;
 
 class ProfesorController extends Controller
 {
-    public function index(){
+    public function index($profesor_rut){
+        $profesor = Profesor::where('rut', $profesor_rut)->first();
+        $propuesta = new Propuesta();
         $propuestas = Propuesta::all();
-        return view('profesores.index',compact('propuestas'));
+    
+        return view('profesores.index', compact('profesor','propuesta','propuestas'));
     }
+
 
     public function comment($estudiante_rut){
         $estudiante = Estudiante::where('rut',$estudiante_rut)->first();

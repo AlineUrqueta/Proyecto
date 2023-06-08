@@ -31,7 +31,8 @@
             </div>
         </div>
         <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
-            <form action="{{route('profesores.storeComentario',['id_propuesta'=>$propuesta->id,'rut_profesor'=>'19345987-1']) }}" method="POST">
+            <!-- tenia un problema de orden, el rut va primero por la ruta -->
+            <form action="{{route('profesores.storeComentario',['estudiante_rut' => $estudiante->rut, 'id_propuesta'=>$propuesta->id]) }}" method="POST">
                 @csrf
             <h5 class = "mt-2 mb-4">Comentario </h5>
             <textarea id="comentario" class="form-control" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
