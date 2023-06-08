@@ -17,13 +17,12 @@
 
     <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4" style = "height:auto;">
                 <div class="card text-center m-2">
                     <div class="card-header" style="background-color: #5e9ace; color: white;">
                         <h4 class="card-title">Administrador </h4>
                     </div>
-                    <div class="card-body">
-                        
+                    <div class="card-body">  
                         <div class="d-grid gap-2">
                             <a style="margin-top:100px; background-color: #5e9ace; color: white;" class="btn" href="{{route('administrador.admin')}}">Ingresar</a>
                         </div>
