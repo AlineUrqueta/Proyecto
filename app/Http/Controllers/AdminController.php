@@ -55,6 +55,7 @@ class AdminController extends Controller
         $propuesta = Propuesta::where('id',$propuesta_id)->first();
         $propuesta ->estado = $request ->estado ;
         $propuesta->save();
+        usleep(1000000);
         return redirect()->route('administrador.admin');
     }
 }
