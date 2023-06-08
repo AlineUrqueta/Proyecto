@@ -36,11 +36,10 @@ class EstudianteController extends Controller
     }
 
     public function retroalimentacion($estudiante_rut,$propuesta_id){
+        $propuesta = Propuesta::where('id',$propuesta_id)->first();
         $estudiante = Estudiante::where('rut', $estudiante_rut)->first();
-        return view('estudiantes.retroalimentacion',compact('estudiantes'));
+        return view('estudiantes.retroalimentacion',compact('estudiante','propuesta'));
     }
     
-    // public function show(Estudiante $estudiante){
-    //     return view('estudiantes.show',compact('estudiante'));
-    // }
+    
 }

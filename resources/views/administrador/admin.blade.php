@@ -34,7 +34,7 @@
         </div>
 
         
-        <div class="container-fluid bg-body-tertiary  border border-5 rounded" style = "height:30rem;">
+        <div class="container-fluid bg-body-tertiary  border border-5 rounded mb-2" style = "height:auto;">
             <div class="row m-2 ">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">

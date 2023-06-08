@@ -48,6 +48,27 @@ class PropuestaController extends Controller
 
     }
 
+    public function update($estudiante_rut,$propuesta_id,Request $request){
+        $propuesta = Propuesta::where('estudiante_rut', $estudiante_rut)->get();
+        $propuesta -> fecha = $request->fecha;
+        $propuesta ->estudiante_rut =$estudiante_rut ;
+
+        if(isset($request->documento)){
+
+            Storage::delete($propuesta->documento);
+
+            $propuesta -> documento = $request->file('documento');
+            $nom_doc = $propuesta->documento->getClientOriginalName();
+            $propuesta -> documento->storeAs('',$nom_doc.".".$propuesta->documento->getClientOriginalExtension(),'public');
+            
+        }
+  
+        $propuesta ->estado = 3 ; // Segun lo conversado 3 = Esperando revision
+        $propuesta ->save();
+        return redirect()-> route('estudiantes.estadoPropuesta');
+
+    }
+
 
 
 

@@ -41,7 +41,9 @@ Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController:
 
 
 Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
-Route::get('/estudiantes/{estudiante_rut}/retroalimentacion',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+Route::put('/estudiantes/{estudiante_rut}/estado/{propuesta_id}/update',[PropuestaController::class,'update'])->name('estudiantes.update');
+
+Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
 
 
 
