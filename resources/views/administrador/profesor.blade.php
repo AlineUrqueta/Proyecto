@@ -94,6 +94,13 @@
 
                 <div class="col-lg-8 col-m-12 mt-m-4 mt-s-4">
                     <h5 class = "mt-2 mb-4">Lista de Profesores</h5>
+                    @if(count($profesores)==0)
+                    <div class="col">
+                        <div class="alert alert-info">
+                            No hay profesores agregados a la base de datos.
+                        </div>
+                    </div>
+                    @endif
 
                     <table class="table table-striped">
                         <thead>
