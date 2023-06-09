@@ -43,14 +43,20 @@ class ProfesorController extends Controller
         return view('profesores.index',compact('profesor','propuesta','propuestas'))->with('success', 'Comentario guardado exitosamente');
     }
 
-    public function destroy($profesor_rut,$id_propuesta){
-        $profeProp = Profesor_Propuesta::findMany([$id_propuesta,$profesor_rut]);        
-        $profeProp->delete();
+    public function destroy($profesor_rut,$propuesta_id){
+        // $profeProp = Profesor_Propuesta::where('propuesta_id',$propuesta_id)->get();
+        // //$profeProp = Profesor_Propuesta::findMany([$propuesta_id,$profesor_rut])->first();
+        // $profeProp->propuesta_id = null;
+        // $profeProp->profesor_rut = null;
+        // $profeProp->fecha = null;
+        // $profeProp->hora = null;
+        // $profeProp->comentario = null;
+        // $profeProp->save();
         
         $profesor = Profesor::where('rut', $profesor_rut)->first();
         $propuesta = new Propuesta();
         $propuestas = Propuesta::all();
 
-        return redirect('profesores.index',compact('profesor','propuesta','propuestas'));
+        return view('profesores.index',compact('profesor','propuesta','propuestas'));
     }
 }
