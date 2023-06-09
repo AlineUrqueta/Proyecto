@@ -10,6 +10,7 @@ use PDF;
 use Illuminate\Support\Facades\Response;
 
 
+
 class EstudianteController extends Controller
 {
     public function index($estudiante_rut)
