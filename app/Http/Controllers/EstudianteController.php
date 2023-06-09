@@ -39,22 +39,21 @@ class EstudianteController extends Controller
         return view('estudiantes.retroalimentacion',compact('estudiante','propuesta','profesor_propuesta','profesor'));
     }
 
-    public function descargar($estudiante_rut, $doc)
-{
-    $data = Propuesta::all();
+    public function descargar($estudiante_rut, $doc){
+        $data = Propuesta::all();
 
-    // Renderiza la vista exportpdf.blade.php con los datos de las propuestas
-    $pdf = PDF::loadView('exportpdf', compact('data'));
+        // Renderiza la vista exportpdf.blade.php con los datos de las propuestas
+        $pdf = PDF::loadView('exportpdf', compact('data'));
 
-    // Genera un nombre de archivo único para el PDF
-    $fileName = 'propuestas_' . time() . '.pdf';
+        // Genera un nombre de archivo único para el PDF
+        $fileName = 'propuestas_' . time() . '.pdf';
 
-    // Guarda el PDF en el directorio de almacenamiento público
-    $pdf->save(storage_path('app/public/' . $fileName));
+        // Guarda el PDF en el directorio de almacenamiento público
+        $pdf->save(storage_path('app/public/' . $fileName));
 
-    // Devuelve una respuesta de descarga para el usuario
-    return $pdf->download(storage_path('app/public/' . $fileName));
-   
-}
+        // Devuelve una respuesta de descarga para el usuario
+        return $pdf->download(storage_path('app/public/' . $fileName));
+    
+    }
 
 }
