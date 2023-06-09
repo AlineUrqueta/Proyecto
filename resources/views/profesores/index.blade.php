@@ -23,8 +23,19 @@
                         <td>{{$propuesta->fecha}}</td>
                         <td class="text" style="0px">
                           <div class="d-flex">
-                            <a href="{{route('profesores.comment',['profesor_rut'=>$profesor->rut,'estudiante_rut'=>$propuesta->estudiante_rut,'id_propuesta'=>$propuesta->id])}}"  class="btn border-dark d-flex align-items-center" style="text-decoration: none; color: black;">
-                                Agregar <span class="material-symbols-outlined">add_comment</span></a>
+                            <a href="{{route('profesores.comment',['profesor_rut'=>$profesor->rut,'estudiante_rut'=>$propuesta->estudiante_rut,'id_propuesta'=>$propuesta->id])}}" class="btn border-dark d-flex align-items-center m-1" style="text-decoration: none; color: black;" data-bs-toggle="tooltip"
+                                rel="tooltip" data-placement="top" title="Agregar comentario">
+                                <span class="material-symbols-outlined">add_comment</span></a>
+                            <form method="POST" action="{{route('profesores.destroy',['profesor_rut'=>$profesor->rut,'id_propuesta'=>$propuesta->id])}}">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn border-dark d-flex align-items-center m-1" style="text-decoration: none; color: black;" data-bs-toggle="tooltip"
+                                rel="tooltip" value="delete" type="submit" data-placement="top" title="Eliminar comentario"><span class="material-symbols-outlined">chat_error</span></button>  
+                            </form>
+                            {{--<a class="btn border-dark d-flex align-items-center m-1" style="text-decoration: none; color: black;" data-bs-toggle="tooltip"
+                                rel="tooltip" href="{{route('profesores.destroy',$profesor->rut)}}" type="submit" data-placement="top" title="Eliminar comentario">
+                                <span class="material-symbols-outlined">chat_error</span></a>--}}
+                            
                           </div>
                         </td>
                         <td> <button class="btn border-dark d-flex align-items-center">Documento.pdf<span class="material-symbols-outlined ">download</span></button></td>

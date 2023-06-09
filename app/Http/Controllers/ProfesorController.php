@@ -34,13 +34,23 @@ class ProfesorController extends Controller
         $profeProp->fecha = $fechaHora->toDateString();
         $profeProp->hora = $fechaHora->toTimeString();
         $profeProp->comentario = $request->comentario;
-        
         $profeProp->save();
-        return redirect()->route('profesores.exito',['estudiante_rut' => $rut_estudiante, 'profesor_rut'=>$rut_profesor,'id_propuesta'=>$id_propuesta])->with('success', 'Comentario guardado exitosamente');
 
+        $profesor = Profesor::where('rut', $rut_estudiante)->first();
+        $propuesta = new Propuesta();
+        $propuestas = Propuesta::all();
+
+        return view('profesores.index',compact('profesor','propuesta','propuestas'))->with('success', 'Comentario guardado exitosamente');
     }
 
-    public function exito(){
-        return view('profesores.exito');
+    public function destroy($profesor_rut,$id_propuesta){
+        $profeProp = Profesor_Propuesta::findMany([$id_propuesta,$profesor_rut]);        
+        $profeProp->delete();
+        
+        $profesor = Profesor::where('rut', $profesor_rut)->first();
+        $propuesta = new Propuesta();
+        $propuestas = Propuesta::all();
+
+        return redirect('profesores.index',compact('profesor','propuesta','propuestas'));
     }
 }
