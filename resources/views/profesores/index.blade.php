@@ -38,7 +38,7 @@
                             {{--<a class="btn border-dark d-flex align-items-center m-1" style="text-decoration: none; color: black;" data-bs-toggle="tooltip"
                                 rel="tooltip" href="{{route('profesores.destroy',$profesor->rut)}}" type="submit" data-placement="top" title="Eliminar comentario">
                                 <span class="material-symbols-outlined">chat_error</span></a>--}}
-                            --
+                            
                           </div>
                         </td>
                         <td> 
