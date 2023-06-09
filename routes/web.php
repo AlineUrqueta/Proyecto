@@ -9,7 +9,7 @@ use App\Http\Controllers\PropuestaController;
 use App\Http\Controllers\ProfesorController;
 
 
-use App\Http\Controllers\ProfesorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
