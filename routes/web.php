@@ -64,4 +64,4 @@ Route::get('/exportpdf',[PropuestaController::class,'exportpdf'])->name('exportp
 Route::get('/profesores/{profesor_rut}',[ProfesorController::class,'index'])->name('profesores.index');
 Route::get('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}',[ProfesorController::class,'comment'])->name('profesores.comment');
 Route::post('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
-Route::delete('/profesores/{profesor_rut}',[ProfesorController::class,'destroy'])->name('profesores.destroy');
+Route::delete('/profesores/{profesor_rut}/{id_propuesta}',[ProfesorController::class,'destroy'])->name('profesores.destroy');

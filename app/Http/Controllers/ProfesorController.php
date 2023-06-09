@@ -44,7 +44,7 @@ class ProfesorController extends Controller
     }
 
     public function destroy($profesor_rut,$id_propuesta){
-        $profeProp = Profesor_Propuesta::findMany([$id_propuesta,$profesor_rut]);        
+        $profeProp = Profesor_Propuesta::findMany([$id_propuesta,$profesor_rut]);      
         $profeProp->delete();
         
         $profesor = Profesor::where('rut', $profesor_rut)->first();
