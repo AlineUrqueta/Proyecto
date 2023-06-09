@@ -54,3 +54,4 @@ Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[Est
 Route::get('/profesores/{profesor_rut}',[ProfesorController::class,'index'])->name('profesores.index');
 Route::get('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}',[ProfesorController::class,'comment'])->name('profesores.comment');
 Route::post('/profesores/{profesor_rut}/comment/{estudiante_rut}/{id_propuesta}', [ProfesorController::class,'storeComentario'])->name('profesores.storeComentario');
+Route::delete('/profesores/{profesor_rut}',[ProfesorController::class,'destroy'])->name('profesores.destroy');

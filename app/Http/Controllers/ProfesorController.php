@@ -42,4 +42,15 @@ class ProfesorController extends Controller
 
         return view('profesores.index',compact('profesor','propuesta','propuestas'))->with('success', 'Comentario guardado exitosamente');
     }
+
+    public function destroy($profesor_rut,$id_propuesta){
+        $profeProp = Profesor_Propuesta::findMany([$id_propuesta,$profesor_rut]);        
+        $profeProp->delete();
+        
+        $profesor = Profesor::where('rut', $profesor_rut)->first();
+        $propuesta = new Propuesta();
+        $propuestas = Propuesta::all();
+
+        return redirect('profesores.index',compact('profesor','propuesta','propuestas'));
+    }
 }
