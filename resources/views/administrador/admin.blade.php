@@ -91,8 +91,8 @@
                                     </td>
                                     <td>
                                         
-                                        <button class = "btn border-dark d-flex align-items-center" type ="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            Cambiar Estado <span class="material-symbols-outlined">task</span>
+                                        <button class="btn border-dark d-flex align-items-center" type = "submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            Cambiar estado <span class="material-symbols-outlined">task</span>
                                         </button>
 
                                     </td>
@@ -104,17 +104,9 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    ¿Desea cambiar el estado de la propuesta?
+                                                    Estado actualizado!
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <a href="{{route('administrador.admin')}}" class = "text-decoration-none">
-                                                        <button type="button" class="btn border-danger d-flex align-items-center" data-bs-dismiss="modal">Cancelar</button>
-                                                    </a>
-                                                    <button class="btn border-dark d-flex align-items-center" type = "submit" >
-                                                    Confirmar <span class="material-symbols-outlined">task</span>
-                                                    </button>
-                                                    
-                                            </div>
+
                                             </div>
                                         </div>
                                     </div>
