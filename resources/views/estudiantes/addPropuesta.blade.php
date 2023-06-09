@@ -80,28 +80,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($propuestas as $propuesta)
-                        <tr>
-                            <td>{{$propuesta->estudiante_rut}}</td>
-                            <td>{{$propuesta->fecha}}</td>
-                            <td>{{$propuesta->documento}}</td>
-                            <td> 
-                                <a class = "text-decoration-none" href="{{ route('propuesta.descargar', ['estudiante_rut' => $estudiante->rut,'doc' => $propuesta->documento]) }}"><button class="btn border-dark d-flex align-items-center">
-                                Descargar  <span class="material-symbols-outlined ">download</span>
-                                
-                                </button></a>
-                                
-                            </td>
-                            <td>
-                                <a class = "text-decoration-none" href="{{ route('estudiantes.estadoPropuesta', ['estudiante_rut' => $estudiante->rut,'propuesta_id'=> $propuesta ->id]) }}">
-                                <button class="btn border-dark d-flex align-items-center">
-                                    Estado <span class="material-symbols-outlined">task</span>
-                                </button></a>
-                                
-                                
-                            </td>
-                        </tr>
-                    @endforeach
+                        @foreach ($propuestas as $propuesta)
+    <tr>
+        <td>{{$propuesta->estudiante_rut}}</td>
+        <td>{{$propuesta->fecha}}</td>
+        <td>{{$propuesta->documento}}</td>
+        <td> 
+            <a class="text-decoration-none" href="{{ route('estudiantes.descargar', ['estudiante_rut' => $estudiante->rut, 'doc' => $propuesta->documento]) }}">
+                <button class="btn border-dark d-flex align-items-center">
+                    Descargar <span class="material-symbols-outlined ">download</span>
+                </button>
+            </a>
+        </td>
+        <td>
+            <a class="text-decoration-none" href="{{ route('estudiantes.estadoPropuesta', ['estudiante_rut' => $estudiante->rut,'propuesta_id'=> $propuesta->id]) }}">
+                <button class="btn border-dark d-flex align-items-center">
+                    Estado <span class="material-symbols-outlined">task</span>
+                </button>
+            </a>
+        </td>
+    </tr>
+@endforeach
+
+                    
                     </tbody>
                 </table>
             @endif

@@ -41,6 +41,7 @@
                                                 Su propuesta esta siendo revisada!
                                             </div>
                                         </div>
+                                        
                                     @elseif ($propuesta->estado == 1 or $propuesta->estado ==  2)
 
                                         <div class="mb-2">

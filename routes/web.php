@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EstudianteController;
+
 use App\Http\Controllers\PropuestaController;
 use App\Http\Controllers\ProfesorController;
 
 
+use App\Http\Controllers\ProfesorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,10 +44,19 @@ Route::get('/estudiante/{estudiante_rut}/propuesta',[PropuestaController::class,
 Route::post('/estudiantes/{estudiante_rut}/propuesta',[PropuestaController::class,'store'])->name('estudiantes.store');
 Route::get('/estudiantes/{estudiante_rut}/propuesta/{doc}',[PropuestaController::class,'descargar'])->name('propuesta.descargar');
 
+
+Route::get('/estudiantes/{estudiante_rut}/descargar/{doc}', [EstudianteController::class, 'descargar'])->name('estudiantes.descargar');
+
 Route::get('/estudiantes/{estudiante_rut}/estado/{propuesta_id}',[EstudianteController::class,'estado'])->name('estudiantes.estadoPropuesta');
 Route::put('/estudiantes/{estudiante_rut}/estado/{propuesta_id}/update',[PropuestaController::class,'update'])->name('estudiantes.update');
 
 Route::get('/estudiantes/{estudiante_rut}/retroalimentacion/{propuesta_id}',[EstudianteController::class,'retroalimentacion'])->name('estudiantes.retroalimentacion');
+Route::get('/exportpdf',[PropuestaController::class,'exportpdf'])->name('exportpdf');
+
+
+
+
+
 
 
 
